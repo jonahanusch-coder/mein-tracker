@@ -3,67 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#0b0f1a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Growth">
 <title>Growth</title>
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSIjMWY4YTVhIi8+PHBhdGggZD0iTTkwIDEzNVY4NSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjciIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MCA5MEM5MCA2NSA3MCA1NSA1MCA1NUM1MCA4MCA3MCA5MCA5MCA5MFoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNOTAgNzVDOTAgNTAgMTEwIDQwIDEzMCA0MEMxMzAgNjUgMTEwIDc1IDkwIDc1WiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSIjMWY4YTVhIi8+PGVsbGlwc2UgY3g9IjkwIiBjeT0iMTQ1IiByeD0iMzIiIHJ5PSI4IiBmaWxsPSIjMTU2ZDQ2Ii8+PHJlY3QgeD0iODUiIHk9IjcwIiB3aWR0aD0iMTAiIGhlaWdodD0iNzUiIHJ4PSI1IiBmaWxsPSIjZmZmIi8+PGVsbGlwc2UgY3g9IjYyIiBjeT0iNzUiIHJ4PSIyMiIgcnk9IjE2IiBmaWxsPSIjZmZmIiB0cmFuc2Zvcm09InJvdGF0ZSgtMzAgNjIgNzUpIi8+PGVsbGlwc2UgY3g9IjExOCIgY3k9IjcwIiByeD0iMjIiIHJ5PSIxNiIgZmlsbD0iI2ZmZiIgdHJhbnNmb3JtPSJyb3RhdGUoMzAgMTE4IDcwKSIvPjwvc3ZnPg==">
 <style>
 :root{
-  --bg:#000000; --bg2:#0a0a0a; --panel:#121212; --panel2:#161616; --line:#262626;
-  --text:#f3f3f3; --muted:#8f8f95;
-  --green:#3fae74; --blue:#5b8cff; --purple:#9b72ff; --red:#ff5c5c; --pink:#e8a0c4;
+  --bg:#0b0f1a; --bg2:#0e1322; --panel:#141a2b; --panel2:#18203400; --panel2:#1a2136; --line:#232b42;
+  --text:#eef1fb; --muted:#8890a8; --muted2:#6b7390;
+  --green:#4fb47c; --green-deep:#2f8b5c; --blue:#5e8dfb; --purple:#9b7bff; --red:#ef5f6f; --amber:#e8a33d;
+  --chip-sleep-bg:#241a3a; --chip-calm-bg:#132540; --chip-grow-bg:#0f2b22; --chip-strong-bg:#0d3324;
+  --shadow:0 14px 34px rgba(0,0,0,.35);
 }
-:root[data-theme="blue"]{--bg:#060a14; --bg2:#080d1a; --panel:#0f1626; --panel2:#121a2e; --line:#20293f; --text:#f2f4fb; --muted:#8b94ab;}
-:root[data-theme="turquoise"]{--bg:#04100f; --bg2:#061513; --panel:#0d1e1c; --panel2:#102523; --line:#1c3532; --text:#eefaf8; --muted:#83a29d;}
-:root[data-theme="green"]{--bg:#050f08; --bg2:#07130a; --panel:#0d1c11; --panel2:#112314; --line:#1c3322; --text:#eef7f0; --muted:#84a08c;}
-:root[data-theme="white"]{--bg:#f5f5f2; --bg2:#efefec; --panel:#ffffff; --panel2:#fafaf8; --line:#e2e2dd; --text:#1c1c1a; --muted:#7a7a75;}
+:root[data-theme="blue"]{--bg:#070b16; --bg2:#0a0f1e; --panel:#101a2e; --panel2:#142035; --line:#1f2c47; --text:#eef2fc; --muted:#8a93af;}
+:root[data-theme="turquoise"]{--bg:#061412; --bg2:#081815; --panel:#0e211d; --panel2:#122822; --line:#1b352f; --text:#eafaf5; --muted:#82a49c;}
+:root[data-theme="green"]{--bg:#07130a; --bg2:#0a170d; --panel:#0f2015; --panel2:#132719; --line:#1c3524; --text:#ecf7ef; --muted:#82a48d;}
+:root[data-theme="white"]{--bg:#f3f3ef; --bg2:#ececE6; --panel:#ffffff; --panel2:#f7f7f4; --line:#e3e3dc; --text:#1d1d1a; --muted:#7c7c74; --shadow:0 10px 26px rgba(0,0,0,.08);}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);
  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
  min-height:100vh;-webkit-tap-highlight-color:transparent;transition:background .3s,color .3s}
 button,input,select,textarea{font:inherit}
 button{color:inherit}
-.app{max-width:900px;margin:auto;padding:30px 20px 116px}
+.app{max-width:900px;margin:auto;padding:32px 20px 118px}
 header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;gap:10px}
-.greeting{font-size:clamp(22px,4.6vw,32px);font-weight:650;letter-spacing:-.4px}
-.date{color:var(--muted);margin-top:4px;font-size:14px}
-.fruitbadge{display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:8px 12px;font-size:14px;white-space:nowrap;cursor:pointer}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:19px;margin-bottom:14px}
-.card h2{font-size:15px;margin:0 0 13px;font-weight:650;letter-spacing:-.2px}
+.greeting{font-size:clamp(21px,4.4vw,30px);font-weight:680;letter-spacing:-.4px}
+.date{color:var(--muted);margin-top:5px;font-size:13.5px}
+.fruitbadge{display:flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:9px 13px;font-size:14px;white-space:nowrap;cursor:pointer;box-shadow:var(--shadow)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:20px;margin-bottom:14px;box-shadow:var(--shadow)}
+.card h2{font-size:14.5px;margin:0 0 13px;font-weight:680;letter-spacing:-.1px}
+.subtle{font-size:12px;color:var(--muted);margin-top:-9px;margin-bottom:13px}
 .topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px}
 .muted{color:var(--muted)}
-.msg{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:15px 17px;font-size:14.5px;line-height:1.5;margin-bottom:14px}
+.msg{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:15px 17px;font-size:14px;line-height:1.5;margin-bottom:14px}
 .todo{display:flex;align-items:center;gap:11px;padding:12px 3px;border-bottom:1px solid var(--line)}
 .todo:last-child{border-bottom:0}
-.check{width:22px;height:22px;border:1.5px solid #565656;border-radius:7px;background:transparent;flex:0 0 auto;cursor:pointer}
-:root[data-theme="white"] .check{border-color:#c7c7c0}
-.todo.done .check{background:linear-gradient(135deg,var(--blue),var(--purple));border-color:transparent;position:relative}
-.todo.done .check:after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff}
+.check{width:22px;height:22px;border:1.5px solid #4a5170;border-radius:8px;background:transparent;flex:0 0 auto;cursor:pointer;position:relative}
+:root[data-theme="white"] .check{border-color:#cfcfc6}
+.check.done{background:linear-gradient(135deg,var(--blue),var(--purple));border-color:transparent}
+.check.done:after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
 .todo.done .tname{text-decoration:line-through;color:var(--muted)}
-.star{background:none;border:0;font-size:17px;cursor:pointer;padding:4px;line-height:1;color:#565656}
-.star.on{color:var(--red)}
+.starbtn{background:none;border:0;cursor:pointer;padding:3px;line-height:1}
 .tmain{flex:1;min-width:0;cursor:pointer}
 .tname{font-size:15px}
 .tmeta{font-size:12px;color:var(--muted);margin-top:3px}
-.tactions{display:flex;gap:2px}
-.mini{background:none;border:0;color:#6b6b6b;cursor:pointer;padding:7px;border-radius:9px;font-size:14px}
+.mini{background:none;border:0;color:var(--muted2);cursor:pointer;padding:7px;border-radius:9px;font-size:13px}
 .mini:hover{background:var(--line)}
 .empty{padding:14px 3px;color:var(--muted);font-size:14px;line-height:1.5}
-.plantwrap{display:flex;align-items:center;gap:18px}
-.plantstate{font-size:13px;color:var(--muted);margin-top:6px}
-.routine{display:flex;align-items:center;gap:11px;padding:11px 3px;border-bottom:1px solid var(--line)}
+/* Pflanze */
+.plantstage{display:flex;flex-direction:column;align-items:center;gap:14px}
+.stagebadge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:99px;font-size:13px;font-weight:600}
+.stagebadge .dot{width:8px;height:8px;border-radius:50%}
+.stagebadge.sleep{background:var(--chip-sleep-bg);color:#c3aefc}
+.stagebadge.calm{background:var(--chip-calm-bg);color:#8fb6f5}
+.stagebadge.grow{background:var(--chip-grow-bg);color:#7ed4a8}
+.stagebadge.strong{background:var(--chip-strong-bg);color:#7ce8a8}
+.statelist{display:flex;flex-direction:column;gap:9px}
+.staterow{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:16px;background:var(--panel2);border:1px solid var(--line)}
+.staterow.active{border-color:var(--blue)}
+.stateicon{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.staterow .sname{font-size:13.5px;font-weight:650}
+.staterow .ssub{font-size:11.5px;color:var(--muted)}
+.homeplant{display:flex;align-items:center;gap:16px}
+/* Routinen */
+.routine{display:flex;align-items:center;gap:11px;padding:12px 3px;border-bottom:1px solid var(--line)}
 .routine:last-child{border-bottom:0}
-.routine.paused{opacity:.45}
-.ricon{font-size:17px;width:24px;text-align:center}
+.routine.paused{opacity:.4}
+.ricon{width:30px;height:30px;border-radius:10px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:var(--panel2)}
 .freq{font-size:12px;color:var(--muted);margin-top:2px}
-.tabs{position:fixed;z-index:20;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:3px;background:var(--panel);backdrop-filter:blur(16px);border:1px solid var(--line);padding:5px;border-radius:18px;box-shadow:0 10px 30px #0007;max-width:calc(100% - 20px);overflow-x:auto}
-.tab{border:0;background:transparent;border-radius:13px;padding:9px 11px;color:var(--muted);cursor:pointer;font-size:12.5px;white-space:nowrap}
+.subchecks{display:flex;gap:6px}
+.subcheck{width:26px;height:26px;border-radius:8px;border:1.5px solid #4a5170;background:transparent;cursor:pointer;font-size:10px;color:var(--muted);display:flex;align-items:center;justify-content:center}
+.subcheck.done{background:linear-gradient(135deg,var(--blue),var(--purple));border-color:transparent;color:#fff}
+.fixedtag{font-size:10px;color:var(--muted2);border:1px solid var(--line);border-radius:7px;padding:2px 6px}
+/* Schlaf */
+.sleeprow{display:flex;gap:8px}
+.sleepbtn{flex:1;border:1.5px solid var(--line);background:var(--panel2);border-radius:14px;padding:11px 6px;text-align:center;cursor:pointer}
+.sleepbtn .sicon{display:block;margin:0 auto 5px}
+.sleepbtn .slabel{font-size:11.5px;color:var(--muted)}
+.sleepbtn.sel{border-color:var(--blue);background:var(--chip-calm-bg)}
+.sleepbtn.sel .slabel{color:var(--text)}
+/* Tabs */
+.tabs{position:fixed;z-index:20;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:3px;background:var(--panel);backdrop-filter:blur(16px);border:1px solid var(--line);padding:5px;border-radius:19px;box-shadow:0 10px 30px #0007;max-width:calc(100% - 20px);overflow-x:auto}
+.tab{border:0;background:transparent;border-radius:14px;padding:9px 11px;color:var(--muted);cursor:pointer;font-size:12.5px;white-space:nowrap}
 .tab.active{background:var(--panel2);color:var(--text)}
+/* Modal */
 .modal{position:fixed;inset:0;background:#000a;backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px;z-index:30}
 .modal.open{display:flex}
-.modalbox{width:min(500px,100%);max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:23px;padding:21px}
+.modalbox{width:min(500px,100%);max-height:88vh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:21px}
 .modalbox h2{margin-top:0;font-size:17px}
 .field{margin:12px 0}
 .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
@@ -73,6 +101,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
 .chiprow{display:flex;gap:7px;flex-wrap:wrap}
 .chip{border:1.3px solid var(--line);background:var(--bg2);border-radius:11px;padding:8px 12px;cursor:pointer;font-size:13px;color:var(--muted)}
 .chip.sel{border-color:var(--blue);color:var(--text);background:var(--panel2)}
+.switchline{display:flex;align-items:center;gap:10px;cursor:pointer}
 .modal-actions{display:flex;justify-content:space-between;gap:9px;margin-top:18px}
 .secondary{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 15px;cursor:pointer;color:var(--text)}
 .primary{background:linear-gradient(135deg,var(--blue),var(--purple));border:0;border-radius:12px;padding:11px 17px;font-weight:650;cursor:pointer;color:#fff}
@@ -82,50 +111,63 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
 .settingsline:last-child{border-bottom:0}
 .hint{color:var(--muted);font-size:12.5px;line-height:1.6;margin:6px 0 0}
 .swatches{display:flex;gap:9px}
-.swatch{width:34px;height:34px;border-radius:50%;border:2px solid transparent;cursor:pointer}
+.swatch{width:32px;height:32px;border-radius:50%;border:2px solid transparent;cursor:pointer}
 .swatch.sel{border-color:var(--blue)}
 .toggle{width:44px;height:26px;border-radius:99px;background:var(--line);position:relative;border:0;cursor:pointer;flex:0 0 auto}
 .toggle:after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:#fff;top:3px;left:3px;transition:.2s}
 .toggle.on{background:linear-gradient(135deg,var(--blue),var(--purple))}
 .toggle.on:after{left:21px}
-.achgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:11px}
-.ach{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:13px 8px;text-align:center;cursor:default}
-.ach .aicon{display:flex;align-items:center;justify-content:center;margin-bottom:7px}
-.ach .aname{font-size:11.5px;color:var(--muted);line-height:1.3}
-.ach.locked .aicon{opacity:.3;filter:grayscale(1)}
+.achgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:11px}
+.ach{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:15px 10px;text-align:center;cursor:default}
+.ach .aicon{display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.ach .aname{font-size:11.5px;font-weight:600;line-height:1.3}
+.ach .adesc{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.ach.locked .aicon{opacity:.28;filter:grayscale(1)}
+.ach.locked .aname{color:var(--muted)}
 .freezebar{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:13px 15px;font-size:13.5px;margin-bottom:12px}
-@media(max-width:600px){.app{padding:22px 14px 112px}.card{border-radius:18px}}
+.schoolslider{display:flex;gap:5px}
+.schoolslider button{flex:1;height:8px;border-radius:5px;border:0;background:var(--line);cursor:pointer}
+.schoolslider button.on{background:linear-gradient(135deg,var(--blue),var(--purple))}
+@media(max-width:600px){.app{padding:24px 14px 114px}.card{border-radius:19px}}
 </style>
 </head>
 <body>
 <div class="app">
 <header>
   <div><div id="greeting" class="greeting"></div><div id="date" class="date"></div></div>
-  <div class="fruitbadge" onclick="goto('plant')"><span id="fruitIcon">🍎</span><span id="fruitCount">0</span></div>
+  <div class="fruitbadge" onclick="goto('plant')"><span id="fruitIconWrap"></span><span id="fruitCount">0</span></div>
 </header>
 
 <main id="page-home" class="page active">
   <div id="homeMsg"></div>
+
   <div class="card">
-    <div class="topline"><h2>Wichtig &amp; heute</h2><button class="mini" onclick="goto('todos')">Alle →</button></div>
+    <div class="topline"><h2>Wichtig &amp; bevorstehend</h2><button class="mini" onclick="goto('todos')">Alle →</button></div>
     <div id="homeTodos"></div>
   </div>
+
+  <div class="card">
+    <h2>Schlaf letzte Nacht</h2>
+    <div class="sleeprow" id="sleepRow"></div>
+  </div>
+
   <div class="card" id="homeRoutineCard">
-    <div class="topline"><h2>Heutige Routinen</h2><button class="mini" onclick="goto('routines')">Verwalten →</button></div>
+    <div class="topline"><h2>Heute</h2><button class="mini" onclick="goto('routines')">Verwalten →</button></div>
     <div id="homeRoutines"></div>
   </div>
+
   <div class="card" id="homePlantCard">
     <div class="topline"><h2>Deine Pflanze</h2><button class="mini" onclick="goto('plant')">Ansehen →</button></div>
-    <div class="plantwrap">
+    <div class="homeplant">
       <div id="homePlantSvg"></div>
-      <div><div id="homePlantState" class="plantstate"></div></div>
+      <div id="homePlantBadge"></div>
     </div>
   </div>
 </main>
 
 <main id="page-todos" class="page">
   <div class="card">
-    <div class="topline"><h2>Todos</h2><button class="mini" style="font-size:20px" onclick="openTodoModal()">＋</button></div>
+    <div class="topline"><h2>Todos</h2><button class="mini" style="font-size:19px" onclick="openTodoModal()">＋</button></div>
     <div class="chiprow" style="margin-bottom:12px">
       <button class="chip sel" data-f="all" onclick="setTodoFilter('all',this)">Alle</button>
       <button class="chip" data-f="important" onclick="setTodoFilter('important',this)">Wichtig</button>
@@ -138,16 +180,25 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
 
 <main id="page-routines" class="page">
   <div class="card">
-    <div class="topline"><h2>Routinen</h2><button class="mini" style="font-size:20px" onclick="openRoutineModal()">＋</button></div>
-    <p class="hint">Bis zu 15 aktive Routinen. Häufigkeit und Status kannst du jederzeit ändern.</p>
-    <div id="routinesList" style="margin-top:8px"></div>
+    <div class="topline"><h2>Feste Routinen</h2></div>
+    <p class="subtle">Zähneputzen und Schlaf sind fest eingerichtet und können nicht verändert werden.</p>
+    <div id="fixedRoutinesList"></div>
+  </div>
+  <div class="card">
+    <div class="topline"><h2>Deine Routinen</h2><button class="mini" style="font-size:19px" onclick="openRoutineModal()">＋</button></div>
+    <p class="subtle">Bis zu 15 aktiv. Bei Wochentagen kannst du jeden Tag einzeln bestätigen.</p>
+    <div id="routinesList"></div>
   </div>
 </main>
 
 <main id="page-plant" class="page">
-  <div class="card" style="text-align:center;padding:28px 20px">
+  <div class="card" style="text-align:center;padding:30px 20px">
     <div id="plantSvgBig"></div>
-    <div id="plantStateBig" class="plantstate" style="margin-top:14px;font-size:14px"></div>
+    <div id="plantBadgeBig" style="margin-top:16px"></div>
+  </div>
+  <div class="card">
+    <h2>Pflanzenzustände</h2>
+    <div class="statelist" id="stateList"></div>
   </div>
   <div class="card">
     <div class="topline"><h2>Früchte</h2><span class="muted" id="fruitCount2"></span></div>
@@ -158,8 +209,8 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
 <main id="page-achievements" class="page">
   <div class="card">
     <h2>Auszeichnungen</h2>
-    <p class="hint">Manche bleiben bewusst geheim, bis du sie entdeckst.</p>
-    <div class="achgrid" id="achGrid" style="margin-top:12px"></div>
+    <p class="subtle">Manche bleiben bewusst geheim, bis du sie entdeckst.</p>
+    <div class="achgrid" id="achGrid"></div>
   </div>
 </main>
 
@@ -169,10 +220,13 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
     <div id="pauseStatus"></div>
   </div>
   <div class="card">
+    <h2>Schule aktuell</h2>
+    <div class="chiprow" id="schoolChips"></div>
+    <p class="hint">Beeinflusst, wie oft und wie sanft dich Growth anstupst.</p>
+  </div>
+  <div class="card">
     <h2>Aussehen</h2>
-    <div class="settingsline"><span>Hintergrund</span>
-      <div class="swatches" id="themeSwatches"></div>
-    </div>
+    <div class="settingsline"><span>Hintergrund</span><div class="swatches" id="themeSwatches"></div></div>
     <div class="settingsline"><span>Pflanze auf Startseite zeigen</span><button class="toggle" id="togglePlantVis" onclick="toggleSetting('plantVisible')"></button></div>
   </div>
   <div class="card">
@@ -182,7 +236,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
       <button class="chip" data-tone="normal" onclick="setTone('normal',this)">Normal</button>
       <button class="chip" data-tone="push" onclick="setTone('push',this)">Pushend</button>
     </div>
-    <p class="hint" style="margin-top:12px">Wie häufig die App dir kleine Hinweise zeigt.</p>
+    <p class="hint" style="margin-top:12px">Wie häufig dir Growth kleine Hinweise zeigt.</p>
     <div class="chiprow">
       <button class="chip" data-freq="low" onclick="setFreq('low',this)">Selten</button>
       <button class="chip" data-freq="normal" onclick="setFreq('normal',this)">Normal</button>
@@ -191,17 +245,11 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
     </div>
   </div>
   <div class="card">
-    <h2>Fußball</h2>
-    <div class="settingsline"><span>Regelmäßiges Training</span><button class="toggle" id="toggleFussball" onclick="toggleFussball()"></button></div>
-    <div class="field"><label>Trainingstage</label><div class="chiprow" id="footballDays"></div></div>
-    <div class="field"><label>Dauer pro Einheit (Stunden)</label><input type="number" id="footballHours" min="0.5" max="6" step="0.5" onchange="setFootballHours(this.value)"></div>
-  </div>
-  <div class="card">
     <h2>Verknüpfungen &amp; Daten</h2>
     <div class="settingsline"><span>Obsidian</span><button class="secondary" onclick="exportObsidian()">Markdown exportieren</button></div>
     <div class="settingsline"><span>Google / Notion Kalender</span><button class="secondary" onclick="exportICS()">.ics exportieren</button></div>
     <div class="settingsline"><span>Mehrere Geräte (Supabase)</span><span class="muted" style="font-size:13px">nicht verbunden</span></div>
-    <p class="hint">Für Synchronisierung zwischen Geräten muss in den ersten Zeilen des Skripts (SUPABASE_CONFIG) eine echte Projekt-URL und ein anon key eingetragen werden. Ohne diese Angaben läuft Growth rein lokal auf diesem Gerät.</p>
+    <p class="hint">Für Geräte-Sync in den ersten Zeilen des Skripts (SUPABASE_CONFIG) echte Projekt-URL und anon key eintragen. Ohne diese Angaben läuft Growth rein lokal.</p>
     <div class="settingsline"><span>Alle Daten</span><button class="secondary" onclick="resetData()">Zurücksetzen</button></div>
   </div>
 </main>
@@ -243,9 +291,10 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
   </select>
 </div>
 <div class="field"><label>Notiz (optional)</label><textarea id="todoNote" rows="2"></textarea></div>
-<div class="field"><label style="display:flex;align-items:center;gap:9px;cursor:pointer" onclick="toggleImportant()">
-  <span id="importantStar" class="star" style="font-size:20px">☆</span> Als wichtig markieren
-</label></div>
+<div class="field" style="display:flex;flex-direction:column;gap:10px">
+  <label class="switchline" onclick="toggleImportant()"><span id="importantStarIcon"></span> Als wichtig markieren</label>
+  <label class="switchline" onclick="togglePinned()"><span id="pinnedCheckIcon"></span> Immer auf der Startseite zeigen</label>
+</div>
 <div class="modal-actions">
   <button class="danger" id="todoDeleteBtn" style="display:none" onclick="deleteTodoFromModal()">Löschen</button>
   <div style="display:flex;gap:9px;margin-left:auto">
@@ -260,19 +309,21 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
 <h2 id="routineModalTitle">Routine hinzufügen</h2>
 <input type="hidden" id="editRoutineId">
 <div class="field"><label>Bezeichnung</label><input id="routineName" placeholder="z. B. Fußball"></div>
-<div class="field"><label>Symbol</label><div class="chiprow" id="routineIconPicker"></div></div>
+<div class="field"><label>Bereich</label>
+  <div class="chiprow" id="routineCategoryPicker"></div>
+</div>
 <div class="field"><label>Häufigkeit</label>
   <div class="chiprow">
     <button class="chip sel" data-fq="daily" onclick="pickFreq('daily',this)">Täglich</button>
-    <button class="chip" data-fq="weekdays" onclick="pickFreq('weekdays',this)">Wochentage</button>
+    <button class="chip" data-fq="weekdays" onclick="pickFreq('weekdays',this)">Bestimmte Tage</button>
     <button class="chip" data-fq="times" onclick="pickFreq('times',this)">x-mal / Woche</button>
   </div>
 </div>
 <div class="field" id="routineWeekdaysField" style="display:none"><label>Tage</label><div class="chiprow" id="routineWeekdays"></div></div>
 <div class="field" id="routineTimesField" style="display:none"><label>Wie oft pro Woche</label><input id="routineTimes" type="number" min="1" max="14" value="3"></div>
-<div class="field"><label style="display:flex;align-items:center;gap:9px;cursor:pointer" onclick="toggleRoutineImportant()">
-  <span id="routineImportantStar" class="star" style="font-size:20px">☆</span> Als wichtig markieren (Sicherheitsabfrage beim Löschen)
-</label></div>
+<div class="field" style="display:flex;align-items:center;gap:10px">
+  <label class="switchline" onclick="toggleRoutineImportant()" style="flex:1"><span id="routineImportantIcon"></span> Wichtig (Sicherheitsabfrage beim Löschen)</label>
+</div>
 <div class="modal-actions">
   <button class="danger" id="routineDeleteBtn" style="display:none" onclick="deleteRoutineFromModal()">Löschen</button>
   <div style="display:flex;gap:9px;margin-left:auto">
@@ -314,50 +365,83 @@ header{display:flex;justify-content:space-between;align-items:flex-start;margin-
    und die Methoden im db-Objekt gegen echte Supabase-Aufrufe tauschen.
    ============================================================ */
 
-const SUPABASE_CONFIG = { url: "", anonKey: "" }; // hier eigene Projektdaten eintragen, sobald vorhanden
-
-const STORAGE_KEY = "growthAppV1";
-const FRUIT_ICON = "🍎";
-const ICONS = ["⚽","💪","🏃","🧘","📚","🎸","🧠","🎬","🥗","💧","😴","✨"];
+const SUPABASE_CONFIG = { url: "", anonKey: "" };
+const STORAGE_KEY = "growthAppV3";
 const WEEKDAY_LABELS = ["Mo","Di","Mi","Do","Fr","Sa","So"];
+const TEETH_ID = "fixed_teeth";
 
 function uid(){ return Date.now() + Math.floor(Math.random()*1000); }
 function todayISO(){ return new Date().toISOString().slice(0,10); }
-function isoWeekday(d){ return (d.getDay()||7); } // 1=Mo..7=So
+function isoWeekday(d){ return (d.getDay()||7); }
+function esc(s){ return String(s).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m])); }
+
+/* ---------- Icon-Set: eine durchgängige Illustrationssprache statt Emoji ---------- */
+function icon(name, size){
+  size = size || 20;
+  const g=getComputedStyle(document.documentElement);
+  const col = c => `var(--${c})`;
+  const box = inner => `<svg width="${size}" height="${size}" viewBox="0 0 40 40" fill="none">${inner}</svg>`;
+  switch(name){
+    case "leaf": return box(`<path d="M20 32C20 32 8 27 8 14C21 14 20 26 20 32Z" fill="${col('green')}"/><path d="M20 32C20 32 32 27 32 14C19 14 20 26 20 32Z" fill="${col('green-deep')}"/>`);
+    case "apple": return box(`<path d="M20 15C15 15 12 19 12 24C12 29.5 16 34 20 34C24 34 28 29.5 28 24C28 19 25 15 20 15Z" fill="${col('red')}"/><path d="M20 15C20 12 22 10 25 9" stroke="${col('green-deep')}" stroke-width="2" stroke-linecap="round"/><ellipse cx="16.5" cy="21" rx="2.2" ry="3.2" fill="#ffffff" opacity=".25"/>`);
+    case "sport": return box(`<circle cx="20" cy="20" r="12" fill="${col('blue')}"/><path d="M20 12L24 17L20 22L16 17Z" fill="#ffffff" opacity=".85"/><path d="M20 22L26 24L24 30L20 22Z" fill="#ffffff" opacity=".55"/><path d="M20 22L14 24L16 30L20 22Z" fill="#ffffff" opacity=".55"/>`);
+    case "health": return box(`<path d="M20 33C20 33 8 25.5 8 17C8 12.5 11.5 9.5 15.5 9.5C17.5 9.5 19.2 10.5 20 12C20.8 10.5 22.5 9.5 24.5 9.5C28.5 9.5 32 12.5 32 17C32 25.5 20 33 20 33Z" fill="${col('red')}"/>`);
+    case "book": return box(`<path d="M8 10C11 8.5 16 8.5 20 10.5V31C16 29 11 29 8 30.5V10Z" fill="${col('purple')}"/><path d="M32 10C29 8.5 24 8.5 20 10.5V31C24 29 29 29 32 30.5V10Z" fill="${col('blue')}"/>`);
+    case "water": return box(`<path d="M20 6C20 6 11 18 11 25C11 30.5 15 34 20 34C25 34 29 30.5 29 25C29 18 20 6 20 6Z" fill="${col('blue')}"/><ellipse cx="16" cy="24" rx="2.2" ry="3.4" fill="#fff" opacity=".3"/>`);
+    case "misc": return box(`<circle cx="13" cy="20" r="3.4" fill="${col('purple')}"/><circle cx="20" cy="20" r="3.4" fill="${col('purple')}"/><circle cx="27" cy="20" r="3.4" fill="${col('purple')}"/>`);
+    case "moon": return box(`<path d="M27 8C21 8 16 13.5 16 20C16 26.5 21 32 27 32C22 33.5 15.5 32 12 27C7.5 21 9 12 15.5 8.2C19 6 23.5 6 27 8Z" fill="${col('purple')}"/>`);
+    case "sun": return box(`<circle cx="20" cy="20" r="7" fill="${col('amber')}"/><g stroke="${col('amber')}" stroke-width="2.4" stroke-linecap="round"><path d="M20 6V10M20 30V34M6 20H10M30 20H34M9.8 9.8L12.6 12.6M27.4 27.4L30.2 30.2M9.8 30.2L12.6 27.4M27.4 12.6L30.2 9.8"/></g>`);
+    case "cloudsun": return box(`<circle cx="15" cy="14" r="5.5" fill="${col('amber')}"/><path d="M12 26C8.5 26 6 23.3 6 20.2C6 17.3 8.2 15 11 14.7C12.2 11.7 15.2 9.7 18.6 9.7C22.7 9.7 26.1 12.6 26.7 16.4C29.6 16.9 32 19.5 32 22.6C32 26 29.2 28.7 25.8 28.7H12Z" fill="${col('blue')}" opacity=".9"/>`);
+    case "rain": return box(`<path d="M12 22C8.5 22 6 19.3 6 16.2C6 13.3 8.2 11 11 10.7C12.2 7.7 15.2 5.7 18.6 5.7C22.7 5.7 26.1 8.6 26.7 12.4C29.6 12.9 32 15.5 32 18.6C32 22 29.2 24.7 25.8 24.7H12Z" fill="${col('muted')}"/><g stroke="${col('blue')}" stroke-width="2.2" stroke-linecap="round"><path d="M13 29L11 34M20 29L18 34M27 29L25 34"/></g>`);
+    case "bed": return box(`<path d="M6 30V15" stroke="${col('blue')}" stroke-width="2.4" stroke-linecap="round"/><path d="M34 30V21" stroke="${col('blue')}" stroke-width="2.4" stroke-linecap="round"/><path d="M6 24C6 21 8 19.5 10.5 19.5H29.5C32 19.5 34 21.5 34 24V30" stroke="${col('blue')}" stroke-width="2.4" stroke-linejoin="round" fill="none"/><rect x="8.5" y="15.5" width="8" height="5.5" rx="2" fill="${col('muted')}" opacity=".55"/><path d="M4 30H36" stroke="${col('blue')}" stroke-width="2.4" stroke-linecap="round"/>`);
+    case "tooth": return box(`<path d="M20 8C16 8 12.5 10.5 12.5 15C12.5 18 13.5 19.5 13.2 22.5C13 25 12 28 13 31C13.6 33 15.3 33.5 16.2 31.5C17 29.5 17.5 26 20 26C22.5 26 23 29.5 23.8 31.5C24.7 33.5 26.4 33 27 31C28 28 27 25 26.8 22.5C26.5 19.5 27.5 18 27.5 15C27.5 10.5 24 8 20 8Z" fill="#fff"/>`);
+    case "toothshine": return box(`<path d="M20 8C16 8 12.5 10.5 12.5 15C12.5 18 13.5 19.5 13.2 22.5C13 25 12 28 13 31C13.6 33 15.3 33.5 16.2 31.5C17 29.5 17.5 26 20 26C22.5 26 23 29.5 23.8 31.5C24.7 33.5 26.4 33 27 31C28 28 27 25 26.8 22.5C26.5 19.5 27.5 18 27.5 15C27.5 10.5 24 8 20 8Z" fill="#fff"/><g stroke="${col('amber')}" stroke-width="2" stroke-linecap="round"><path d="M30 10L33 7M30 15H34"/></g>`);
+    case "flame": return box(`<path d="M20 6C20 6 12 15 12 23C12 29 15.5 33 20 33C24.5 33 28 29 28 23C28 19 25 17 25 17C25 21 22.5 22 22.5 22C22.5 17 20 6 20 6Z" fill="${col('amber')}"/><path d="M20 33C17.5 33 16 30.5 16 27.5C16 24.5 18 22.5 18 22.5C18 25 19.5 26 19.5 26C19.5 24 20 20 20 20C22 23 22.5 25 22.5 27C22.5 31 21 33 20 33Z" fill="#f4c06a"/>`);
+    case "checklist": return box(`<rect x="9" y="7" width="22" height="26" rx="5" stroke="${col('muted')}" stroke-width="2.2" fill="none"/><path d="M13 15L16 18L21 12" stroke="${col('green')}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M13 24L16 27L21 21" stroke="${col('green')}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`);
+    case "seedling": return box(`<path d="M20 32V24" stroke="${col('green-deep')}" stroke-width="3" stroke-linecap="round"/><path d="M20 25C20 19 15 16 11 16C11 22 15 25 20 25Z" fill="${col('green')}"/><ellipse cx="20" cy="33" rx="9" ry="2.2" fill="${col('muted')}" opacity=".4"/>`);
+    case "tree": return box(`<path d="M20 34V20" stroke="#8a6a45" stroke-width="4" stroke-linecap="round"/><ellipse cx="12" cy="17" rx="8" ry="6" fill="${col('green')}"/><ellipse cx="28" cy="17" rx="8" ry="6" fill="${col('green')}"/><ellipse cx="20" cy="10" rx="9" ry="7" fill="${col('green-deep')}"/>`);
+    case "motion": return box(`<circle cx="13" cy="10" r="3.4" fill="${col('blue')}"/><path d="M13 15L11 24L16 22L20 30" stroke="${col('blue')}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M11 24L6 26M16 22L23 20" stroke="${col('blue')}" stroke-width="3" stroke-linecap="round"/>`);
+    case "star_off": return box(`<path d="M20 7L24 17L34 18L26.5 24.5L29 34L20 28.5L11 34L13.5 24.5L6 18L16 17Z" stroke="${col('muted')}" stroke-width="2" stroke-linejoin="round"/>`);
+    case "star_on": return box(`<path d="M20 7L24 17L34 18L26.5 24.5L29 34L20 28.5L11 34L13.5 24.5L6 18L16 17Z" fill="${col('red')}"/>`);
+    case "pin_off": return box(`<path d="M20 6V21M13 21H27L23 30H17L13 21Z" stroke="${col('muted')}" stroke-width="2" stroke-linejoin="round" fill="none"/>`);
+    case "pin_on": return box(`<path d="M20 6V21M13 21H27L23 30H17L13 21Z" fill="${col('blue')}"/>`);
+    case "lock": return box(`<rect x="11" y="18" width="18" height="14" rx="4" fill="${col('muted')}" opacity=".5"/><path d="M14 18V13C14 9.5 16.5 7 20 7C23.5 7 26 9.5 26 13V18" stroke="${col('muted')}" stroke-width="2.4" fill="none"/>`);
+    default: return box(`<circle cx="20" cy="20" r="3" fill="${col('muted')}"/>`);
+  }
+}
 
 /* ---------- Datenmodell & Persistenz ---------- */
 function defaultData(){
   return {
     todos: [
-      {id:uid(), name:"Wichtigste Aufgabe heute", important:true, dateType:"date", date:todayISO(), time:"", reminder:"sameday", note:"", done:false},
-      {id:uid(), name:"Drehbuch überarbeiten", important:false, dateType:"soon", date:"", time:"", reminder:"none", note:"", done:false},
-      {id:uid(), name:"Freund anrufen", important:false, dateType:"none", date:"", time:"", reminder:"none", note:"", done:false}
+      {id:uid(), name:"Wichtigste Aufgabe heute", important:true, pinned:false, dateType:"date", date:todayISO(), time:"", reminder:"sameday", note:"", done:false},
+      {id:uid(), name:"Drehbuch überarbeiten", important:false, pinned:false, dateType:"soon", date:"", time:"", reminder:"none", note:"", done:false},
+      {id:uid(), name:"Freund anrufen", important:false, pinned:false, dateType:"none", date:"", time:"", reminder:"none", note:"", done:false}
     ],
     routines: [
-      {id:uid(), name:"Fußball", icon:"⚽", freq:"weekdays", days:[1,3], timesPerWeek:2, important:true, active:true}
+      {id:uid(), name:"Fußball", category:"sport", freq:"weekdays", days:[1,3], timesPerWeek:0, timesPerDay:1, important:true, active:true, fixed:false}
     ],
-    routineLogs: {}, // { "YYYY-MM-DD": [routineId, ...] }
-    football: {enabled:true, days:[1,3], hours:2},
-    plant: {growthPoints:0, weekHistory:[], firstThrivingSeen:false, firstGrowingSeen:false},
+    routineLogs: {}, // { "YYYY-MM-DD": { routineId: [bool, ...] } }
+    sleepLogs: {},   // { "YYYY-MM-DD": "great"|"good"|"low"|"bad" }
+    plant: {growthPoints:0, weekHistory:[]},
     fruits: {count:0, log:[]},
-    achievements: {unlocked:[]}, // [{id, date}]
+    achievements: {unlocked:[]},
     pause: {active:false, type:"", severity:"", since:""},
-    settings: {theme:"black", motivationTone:"normal", notifFreq:"normal", plantVisible:true},
+    settings: {theme:"black", motivationTone:"normal", notifFreq:"normal", plantVisible:true, schoolLoad:"ok"},
     stats: {totalTodosCompleted:0, totalRoutineCompletions:0, activeDaysStreak:0, lastActiveDate:"", pauseResumedCount:0, lastGapDays:0},
     messages: {lastShownDate:""}
   };
 }
-
-const db = {
-  load(){ return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null") || defaultData(); },
-  save(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
-};
-
+const db = { load(){ return JSON.parse(localStorage.getItem(STORAGE_KEY) || "null") || defaultData(); }, save(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); } };
 let data = db.load();
 function persist(){ db.save(data); }
-function esc(s){ return String(s).replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m])); }
+function getRoutineLog(date, routineId, slots){
+  if(!data.routineLogs[date]) data.routineLogs[date] = {};
+  if(!data.routineLogs[date][routineId]) data.routineLogs[date][routineId] = new Array(slots).fill(false);
+  return data.routineLogs[date][routineId];
+}
 
-/* ---------- Aktivität & Streak (intern, nicht als Dashboard gezeigt) ---------- */
+/* ---------- Aktivität ---------- */
 function markActivity(){
   const today = todayISO();
   if(data.stats.lastActiveDate === today) return;
@@ -366,22 +450,17 @@ function markActivity(){
     const diff = Math.round((new Date(today+"T00:00")-last)/864e5);
     data.stats.lastGapDays = diff;
     data.stats.activeDaysStreak = diff===1 ? data.stats.activeDaysStreak+1 : 1;
-  } else {
-    data.stats.activeDaysStreak = 1;
-  }
+  } else { data.stats.activeDaysStreak = 1; }
   data.stats.lastActiveDate = today;
-  checkAchievements();
 }
 
-/* ---------- Begrüßung ---------- */
+/* ---------- Begrüßung & Navigation ---------- */
 function greeting(){
   const h = new Date().getHours();
   const word = h<5 ? "Gute Nacht" : h<11 ? "Guten Morgen" : h<18 ? "Guten Tag" : "Guten Abend";
-  return word+", Jona 👋";
+  return word+", Jona";
 }
 function fmtDate(d){ return d.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"}); }
-
-/* ---------- Navigation ---------- */
 function goto(page){
   document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active", t.dataset.page===page));
   document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active", p.id==="page-"+page));
@@ -394,34 +473,29 @@ document.querySelectorAll(".modal").forEach(m=> m.addEventListener("click", e=>{
    TODOS
    ============================================================ */
 let todoFilter = "all";
-function setTodoFilter(f, btn){
-  todoFilter = f;
-  document.querySelectorAll("#page-todos .chip").forEach(c=>c.classList.remove("sel"));
-  btn.classList.add("sel");
-  renderTodos();
-}
+function setTodoFilter(f, btn){ todoFilter=f; document.querySelectorAll("#page-todos .chip").forEach(c=>c.classList.remove("sel")); btn.classList.add("sel"); renderTodos(); }
 function todoDueLabel(t){
   if(t.dateType==="soon") return "Demnächst";
-  if(t.dateType==="date" && t.date) return "📅 "+new Date(t.date+"T12:00").toLocaleDateString("de-DE")+(t.time?" · "+t.time:"");
+  if(t.dateType==="date" && t.date) return new Date(t.date+"T12:00").toLocaleDateString("de-DE")+(t.time?" · "+t.time:"");
   return "Kein Datum";
 }
-function relevantHomeTodos(){
-  const open = data.todos.filter(t=>!t.done);
-  const today = todayISO();
-  const dueTodayOrPast = open.filter(t=>t.dateType==="date" && t.date && t.date<=today);
-  const important = open.filter(t=>t.important && !dueTodayOrPast.includes(t));
-  const rest = open.filter(t=>!important.includes(t) && !dueTodayOrPast.includes(t));
-  return [...dueTodayOrPast, ...important, ...rest].slice(0,4);
+function isTodoRelevantForHome(t){
+  if(t.done) return false;
+  if(t.important || t.pinned) return true;
+  if(t.dateType==="date" && t.date){
+    const diff = Math.round((new Date(t.date+"T00:00")-new Date(todayISO()+"T00:00"))/864e5);
+    return diff<=2;
+  }
+  return false;
 }
 function renderHomeTodos(){
-  const list = relevantHomeTodos();
+  const list = data.todos.filter(isTodoRelevantForHome).slice(0,5);
   document.getElementById("homeTodos").innerHTML = list.length
     ? list.map(t=>todoRowHtml(t)).join("")
-    : `<div class="empty">Nichts Dringendes. Genieß den Tag.</div>`;
+    : `<div class="empty">Nichts Dringendes gerade.</div>`;
 }
 function renderTodos(){
   let list = [...data.todos];
-  const today = todayISO();
   if(todoFilter==="important") list = list.filter(t=>t.important);
   if(todoFilter==="soon") list = list.filter(t=>t.dateType==="soon");
   if(todoFilter==="open") list = list.filter(t=>!t.done);
@@ -432,38 +506,30 @@ function renderTodos(){
 }
 function todoRowHtml(t){
   return `<div class="todo ${t.done?"done":""}">
-    <button class="check" onclick="toggleTodo(${t.id})"></button>
-    <button class="star ${t.important?"on":""}" onclick="quickToggleImportant(${t.id})">${t.important?"★":"☆"}</button>
+    <button class="check ${t.done?"done":""}" onclick="toggleTodo(${t.id})"></button>
+    <button class="starbtn" onclick="quickToggleImportant(${t.id})">${icon(t.important?"star_on":"star_off",18)}</button>
     <div class="tmain" onclick="openTodoModal(${t.id})">
       <div class="tname">${esc(t.name)}</div>
       <div class="tmeta">${todoDueLabel(t)}${t.note?" · "+esc(t.note):""}</div>
     </div>
-    <div class="tactions"><button class="mini" onclick="deleteTodo(${t.id})">✕</button></div>
+    <div><button class="mini" onclick="deleteTodo(${t.id})">✕</button></div>
   </div>`;
 }
 function toggleTodo(id){
   const t = data.todos.find(x=>x.id===id);
   t.done = !t.done;
-  if(t.done){ markActivity(); data.stats.totalTodosCompleted++; checkAchievements(); }
-  persist(); renderAll();
+  if(t.done){ markActivity(); data.stats.totalTodosCompleted++; }
+  checkAchievements(); persist(); renderAll();
 }
-function quickToggleImportant(id){
-  const t = data.todos.find(x=>x.id===id);
-  t.important = !t.important;
-  persist(); renderAll();
-}
-let currentDateType = "none", currentImportant = false;
+function quickToggleImportant(id){ const t=data.todos.find(x=>x.id===id); t.important=!t.important; persist(); renderAll(); }
+let currentDateType="none", currentImportant=false, currentPinned=false;
 function pickDateType(v, btn){
-  currentDateType = v;
-  document.querySelectorAll('[data-dt]').forEach(c=>c.classList.remove("sel"));
-  btn.classList.add("sel");
+  currentDateType=v;
+  document.querySelectorAll('[data-dt]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel");
   document.getElementById("todoDateField").style.display = v==="date" ? "block" : "none";
 }
-function toggleImportant(){
-  currentImportant = !currentImportant;
-  document.getElementById("importantStar").textContent = currentImportant ? "★" : "☆";
-  document.getElementById("importantStar").classList.toggle("on", currentImportant);
-}
+function toggleImportant(){ currentImportant=!currentImportant; document.getElementById("importantStarIcon").innerHTML = icon(currentImportant?"star_on":"star_off",20); }
+function togglePinned(){ currentPinned=!currentPinned; document.getElementById("pinnedCheckIcon").innerHTML = icon(currentPinned?"pin_on":"pin_off",20); }
 function openTodoModal(id){
   const t = id ? data.todos.find(x=>x.id===id) : null;
   document.getElementById("todoModalTitle").textContent = t ? "Todo bearbeiten" : "Todo hinzufügen";
@@ -475,10 +541,11 @@ function openTodoModal(id){
   document.getElementById("todoNote").value = t ? t.note : "";
   currentDateType = t ? t.dateType : "none";
   currentImportant = t ? t.important : false;
+  currentPinned = t ? !!t.pinned : false;
   document.querySelectorAll('[data-dt]').forEach(c=>c.classList.toggle("sel", c.dataset.dt===currentDateType));
   document.getElementById("todoDateField").style.display = currentDateType==="date" ? "block" : "none";
-  document.getElementById("importantStar").textContent = currentImportant ? "★" : "☆";
-  document.getElementById("importantStar").classList.toggle("on", currentImportant);
+  document.getElementById("importantStarIcon").innerHTML = icon(currentImportant?"star_on":"star_off",20);
+  document.getElementById("pinnedCheckIcon").innerHTML = icon(currentPinned?"pin_on":"pin_off",20);
   document.getElementById("todoDeleteBtn").style.display = t ? "inline-block" : "none";
   document.getElementById("todoModal").classList.add("open");
 }
@@ -486,31 +553,23 @@ function saveTodo(){
   const name = document.getElementById("todoName").value.trim();
   if(!name) return;
   const id = document.getElementById("editTodoId").value;
-  const obj = {
-    name, important: currentImportant, dateType: currentDateType,
+  const obj = { name, important:currentImportant, pinned:currentPinned, dateType:currentDateType,
     date: currentDateType==="date" ? document.getElementById("todoDate").value : "",
     time: currentDateType==="date" ? document.getElementById("todoTime").value : "",
     reminder: document.getElementById("todoReminder").value,
-    note: document.getElementById("todoNote").value.trim()
-  };
+    note: document.getElementById("todoNote").value.trim() };
   if(id){ Object.assign(data.todos.find(t=>t.id==id), obj); }
-  else { obj.id = uid(); obj.done = false; data.todos.push(obj); }
+  else { obj.id=uid(); obj.done=false; data.todos.push(obj); }
   persist(); closeModal("todoModal"); renderAll();
 }
 function deleteTodo(id){
   const t = data.todos.find(x=>x.id===id);
-  if(t.important && !confirm("Möchtest du dieses wichtige Todo wirklich löschen?")) return;
-  if(!t.important && !confirm("Todo löschen?")) return;
+  const msg = t.important ? "Möchtest du dieses wichtige Todo wirklich löschen?" : "Todo löschen?";
+  if(!confirm(msg)) return;
   data.todos = data.todos.filter(x=>x.id!==id);
   persist(); renderAll();
 }
-function deleteTodoFromModal(){
-  const id = Number(document.getElementById("editTodoId").value);
-  if(id) deleteTodo(id);
-  closeModal("todoModal");
-}
-
-/* ---- Erinnerungen (In-App, kein echtes Push) ---- */
+function deleteTodoFromModal(){ const id=Number(document.getElementById("editTodoId").value); if(id) deleteTodo(id); closeModal("todoModal"); }
 function reminderDueToday(t){
   if(t.done || t.reminder==="none" || t.dateType!=="date" || !t.date) return false;
   const today = todayISO();
@@ -528,30 +587,29 @@ function reminderDueToday(t){
 }
 
 /* ============================================================
-   ROUTINEN
+   ROUTINEN (inkl. fester Zähne-Routine mit Einzel-Check-ins)
    ============================================================ */
-let currentFreq = "daily", currentImportantRoutine = false, currentRoutineIcon = "⚽", currentRoutineDays = [];
+const ROUTINE_CATEGORIES = [
+  {id:"sport", label:"Sport", icon:"sport"},
+  {id:"health", label:"Gesundheit", icon:"health"},
+  {id:"learn", label:"Lernen", icon:"book"},
+  {id:"mind", label:"Ruhe", icon:"water"},
+  {id:"misc", label:"Sonstiges", icon:"misc"}
+];
+let currentFreq="daily", currentImportantRoutine=false, currentCategory="sport", currentRoutineDays=[];
 function pickFreq(v, btn){
-  currentFreq = v;
-  document.querySelectorAll('[data-fq]').forEach(c=>c.classList.remove("sel"));
-  btn.classList.add("sel");
+  currentFreq=v;
+  document.querySelectorAll('[data-fq]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel");
   document.getElementById("routineWeekdaysField").style.display = v==="weekdays" ? "block" : "none";
   document.getElementById("routineTimesField").style.display = v==="times" ? "block" : "none";
 }
-function toggleRoutineImportant(){
-  currentImportantRoutine = !currentImportantRoutine;
-  document.getElementById("routineImportantStar").textContent = currentImportantRoutine ? "★" : "☆";
-  document.getElementById("routineImportantStar").classList.toggle("on", currentImportantRoutine);
-}
+function toggleRoutineImportant(){ currentImportantRoutine=!currentImportantRoutine; document.getElementById("routineImportantIcon").innerHTML = icon(currentImportantRoutine?"star_on":"star_off",20); }
 function buildWeekdayChips(containerId, selected, onClick){
   document.getElementById(containerId).innerHTML = WEEKDAY_LABELS.map((l,i)=>
     `<button class="chip ${selected.includes(i+1)?"sel":""}" onclick="${onClick}(${i+1},this)">${l}</button>`).join("");
 }
-function toggleRoutineDay(day, btn){
-  const idx = currentRoutineDays.indexOf(day);
-  if(idx>-1) currentRoutineDays.splice(idx,1); else currentRoutineDays.push(day);
-  btn.classList.toggle("sel");
-}
+function toggleRoutineDay(day, btn){ const idx=currentRoutineDays.indexOf(day); if(idx>-1) currentRoutineDays.splice(idx,1); else currentRoutineDays.push(day); btn.classList.toggle("sel"); }
+function pickCategory(c, btn){ currentCategory=c; document.querySelectorAll("#routineCategoryPicker .chip").forEach(b=>b.classList.remove("sel")); btn.classList.add("sel"); }
 function openRoutineModal(id){
   if(!id && data.routines.filter(r=>r.active).length>=15){ alert("Du hast bereits 15 aktive Routinen erreicht. Pausiere oder lösche zuerst eine."); return; }
   const r = id ? data.routines.find(x=>x.id===id) : null;
@@ -560,178 +618,209 @@ function openRoutineModal(id){
   document.getElementById("routineName").value = r ? r.name : "";
   currentFreq = r ? r.freq : "daily";
   currentImportantRoutine = r ? r.important : false;
-  currentRoutineIcon = r ? r.icon : "⚽";
+  currentCategory = r ? r.category : "sport";
   currentRoutineDays = r ? [...r.days] : [];
-  document.getElementById("routineIconPicker").innerHTML = ICONS.map(i=>
-    `<button class="chip ${i===currentRoutineIcon?"sel":""}" onclick="pickRoutineIcon('${i}',this)">${i}</button>`).join("");
+  document.getElementById("routineCategoryPicker").innerHTML = ROUTINE_CATEGORIES.map(c=>
+    `<button class="chip ${c.id===currentCategory?"sel":""}" onclick="pickCategory('${c.id}',this)">${icon(c.icon,16)} ${c.label}</button>`).join("");
   document.querySelectorAll('[data-fq]').forEach(c=>c.classList.toggle("sel", c.dataset.fq===currentFreq));
   document.getElementById("routineWeekdaysField").style.display = currentFreq==="weekdays" ? "block" : "none";
   document.getElementById("routineTimesField").style.display = currentFreq==="times" ? "block" : "none";
   document.getElementById("routineTimes").value = r ? r.timesPerWeek : 3;
   buildWeekdayChips("routineWeekdays", currentRoutineDays, "toggleRoutineDay");
-  document.getElementById("routineImportantStar").textContent = currentImportantRoutine ? "★" : "☆";
-  document.getElementById("routineImportantStar").classList.toggle("on", currentImportantRoutine);
+  document.getElementById("routineImportantIcon").innerHTML = icon(currentImportantRoutine?"star_on":"star_off",20);
   document.getElementById("routineDeleteBtn").style.display = r ? "inline-block" : "none";
   document.getElementById("routineModal").classList.add("open");
-}
-function pickRoutineIcon(i, btn){
-  currentRoutineIcon = i;
-  document.querySelectorAll("#routineIconPicker .chip").forEach(b=>b.classList.remove("sel"));
-  btn.classList.add("sel");
 }
 function saveRoutine(){
   const name = document.getElementById("routineName").value.trim();
   if(!name) return;
   const id = document.getElementById("editRoutineId").value;
-  const obj = {
-    name, icon: currentRoutineIcon, freq: currentFreq,
+  const obj = { name, category:currentCategory, freq:currentFreq,
     days: currentFreq==="weekdays" ? [...currentRoutineDays] : [],
     timesPerWeek: currentFreq==="times" ? Number(document.getElementById("routineTimes").value)||3 : 0,
-    important: currentImportantRoutine
-  };
+    timesPerDay: 1, important: currentImportantRoutine };
   if(id){ Object.assign(data.routines.find(r=>r.id==id), obj); }
-  else { obj.id = uid(); obj.active = true; data.routines.push(obj); }
+  else { obj.id=uid(); obj.active=true; obj.fixed=false; data.routines.push(obj); }
   persist(); closeModal("routineModal"); renderAll();
 }
 function deleteRoutineFromModal(){
-  const id = Number(document.getElementById("editRoutineId").value);
+  const id=Number(document.getElementById("editRoutineId").value);
   if(id){
-    const r = data.routines.find(x=>x.id===id);
-    if(r.important && !confirm("Möchtest du diese wichtige Routine wirklich löschen?")) return;
-    if(!r.important && !confirm("Routine löschen?")) return;
+    const r=data.routines.find(x=>x.id===id);
+    const msg = r.important ? "Möchtest du diese wichtige Routine wirklich löschen?" : "Routine löschen?";
+    if(!confirm(msg)) return;
     data.routines = data.routines.filter(x=>x.id!==id);
     persist(); renderAll();
   }
   closeModal("routineModal");
 }
-function toggleRoutineActive(id){
-  const r = data.routines.find(x=>x.id===id);
-  r.active = !r.active;
-  persist(); renderAll();
-}
+function toggleRoutineActive(id){ const r=data.routines.find(x=>x.id===id); r.active=!r.active; persist(); renderAll(); }
 function isRoutineDueToday(r){
   const wd = isoWeekday(new Date());
   if(r.freq==="daily") return true;
   if(r.freq==="weekdays") return r.days.includes(wd);
-  if(r.freq==="times") return true; // bei x-mal/Woche jederzeit abhakbar
-  return true;
+  return true; // "times" ist jederzeit abhakbar
+}
+function catIcon(r){ return ROUTINE_CATEGORIES.find(c=>c.id===r.category)?.icon || "misc"; }
+function freqLabel(r){
+  if(r.freq==="daily") return "Täglich";
+  if(r.freq==="weekdays") return r.days.map(d=>WEEKDAY_LABELS[d-1]).join(", ");
+  return r.timesPerWeek+"x pro Woche";
+}
+function routineRowHtml(r, today, compact){
+  const log = getRoutineLog(today, r.id, r.timesPerDay||1);
+  const doneAll = log.every(Boolean);
+  const subs = (r.timesPerDay||1) > 1
+    ? `<div class="subchecks">${log.map((v,i)=>`<button class="subcheck ${v?"done":""}" onclick="toggleRoutineSlot('${r.id}',${i})">${i+1}</button>`).join("")}</div>`
+    : `<button class="check ${doneAll?"done":""}" onclick="toggleRoutineSlot('${r.id}',0)"></button>`;
+  return `<div class="routine ${r.active?"":"paused"}">
+    ${subs}
+    <span class="ricon">${icon(catIcon(r),18)}</span>
+    <div style="flex:1">
+      <div>${esc(r.name)}${r.fixed?' <span class="fixedtag">fest</span>':""}</div>
+      <div class="freq">${freqLabel(r)}${r.active?"":" · pausiert"}</div>
+    </div>
+    ${r.fixed ? "" : `<button class="mini" onclick="toggleRoutineActive('${r.id}')">${r.active?"⏸":"▶"}</button><button class="mini" onclick="openRoutineModal('${r.id}')">✎</button>`}
+  </div>`;
 }
 function renderRoutines(){
-  if(!data.routines.length){
-    document.getElementById("routinesList").innerHTML = `<div class="empty">Noch keine Routinen. Füge deine erste hinzu.</div>`;
-    return;
-  }
   const today = todayISO();
-  const doneToday = data.routineLogs[today] || [];
-  document.getElementById("routinesList").innerHTML = data.routines.map(r=>{
-    const done = doneToday.includes(r.id);
-    const freqLabel = r.freq==="daily" ? "Täglich" : r.freq==="weekdays" ? r.days.map(d=>WEEKDAY_LABELS[d-1]).join(", ") : r.timesPerWeek+"x pro Woche";
-    return `<div class="routine ${r.active?"":"paused"}">
-      <button class="check ${done?"done":""}" onclick="toggleRoutineToday(${r.id})" ${r.active?"":"disabled"}></button>
-      <span class="ricon">${r.icon}</span>
-      <div style="flex:1">
-        <div>${esc(r.name)}${r.important?' <span class="star on" style="font-size:12px">★</span>':""}</div>
-        <div class="freq">${freqLabel}${r.active?"":" · pausiert"}</div>
-      </div>
-      <button class="mini" onclick="toggleRoutineActive(${r.id})">${r.active?"⏸":"▶"}</button>
-      <button class="mini" onclick="openRoutineModal(${r.id})">✎</button>
-    </div>`;
-  }).join("");
+  const teeth = data.routines.find(r=>r.id===TEETH_ID);
+  document.getElementById("fixedRoutinesList").innerHTML = teeth ? routineRowHtml(teeth, today) : "";
+  const rest = data.routines.filter(r=>!r.fixed);
+  document.getElementById("routinesList").innerHTML = rest.length
+    ? rest.map(r=>routineRowHtml(r, today)).join("")
+    : `<div class="empty">Noch keine eigenen Routinen. Füge deine erste hinzu.</div>`;
 }
 function renderHomeRoutines(){
   const today = todayISO();
-  const doneToday = data.routineLogs[today] || [];
   const due = data.routines.filter(r=>r.active && isRoutineDueToday(r));
-  if(!due.length){
-    document.getElementById("homeRoutineCard").style.display = "none";
-    return;
-  }
-  document.getElementById("homeRoutineCard").style.display = "block";
-  document.getElementById("homeRoutines").innerHTML = due.map(r=>{
-    const done = doneToday.includes(r.id);
-    return `<div class="routine">
-      <button class="check ${done?"done":""}" onclick="toggleRoutineToday(${r.id})"></button>
-      <span class="ricon">${r.icon}</span>
-      <div style="flex:1">${esc(r.name)}</div>
-    </div>`;
-  }).join("");
+  if(!due.length){ document.getElementById("homeRoutineCard").style.display="none"; return; }
+  document.getElementById("homeRoutineCard").style.display="block";
+  document.getElementById("homeRoutines").innerHTML = due.map(r=>routineRowHtml(r, today, true)).join("");
 }
-function toggleRoutineToday(id){
+function toggleRoutineSlot(id, slot){
   const today = todayISO();
-  const list = data.routineLogs[today] || (data.routineLogs[today]=[]);
-  const idx = list.indexOf(id);
-  if(idx>-1){ list.splice(idx,1); }
-  else { list.push(id); markActivity(); data.stats.totalRoutineCompletions++; checkAchievements(); }
-  persist(); renderAll();
+  const r = data.routines.find(x=>x.id==id);
+  const log = getRoutineLog(today, id, r.timesPerDay||1);
+  log[slot] = !log[slot];
+  if(log[slot]){ markActivity(); data.stats.totalRoutineCompletions++; }
+  checkAchievements(); persist(); renderAll();
+}
+function ensureFixedRoutines(){
+  if(!data.routines.find(r=>r.id===TEETH_ID)){
+    data.routines.unshift({id:TEETH_ID, name:"Zähne putzen", category:"health", freq:"daily", days:[], timesPerWeek:0, timesPerDay:2, important:false, active:true, fixed:true});
+  }
+}
+
+/* ---- Zahnputz-Muster erkennen (z. B. nur abends) ---- */
+function teethPatternMessage(){
+  const morning=[], evening=[];
+  for(let i=1;i<=7;i++){
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const iso=d.toISOString().slice(0,10);
+    const log = data.routineLogs[iso]?.[TEETH_ID];
+    if(log){ morning.push(!!log[0]); evening.push(!!log[1]); }
+  }
+  if(morning.length<4) return null;
+  const mRate = morning.filter(Boolean).length/morning.length;
+  const eRate = evening.filter(Boolean).length/evening.length;
+  if(eRate-mRate>=0.5) return "Dir gelingt abends das Zähneputzen deutlich besser als morgens — vielleicht hilft eine feste Routine direkt nach dem Aufstehen.";
+  if(mRate-eRate>=0.5) return "Morgens klappt's gut — abends putzt du seltener. Ein Erinnerungs-Ritual vorm Schlafengehen könnte helfen.";
+  return null;
 }
 
 /* ============================================================
-   PFLANZE (Wachstum, Zustand, Wochenberechnung)
+   SCHLAF
+   ============================================================ */
+const SLEEP_LEVELS = [
+  {id:"great", label:"Ausgeruht", sub:"~8 Std.", icon:"sun"},
+  {id:"good", label:"Gut", sub:"~7 Std.", icon:"cloudsun"},
+  {id:"low", label:"Knapp", sub:"~6 Std.", icon:"rain"},
+  {id:"bad", label:"Zu wenig", sub:"< 6 Std.", icon:"moon"}
+];
+function renderSleepRow(){
+  const today = todayISO();
+  const current = data.sleepLogs[today];
+  document.getElementById("sleepRow").innerHTML = SLEEP_LEVELS.map(s=>
+    `<button class="sleepbtn ${current===s.id?"sel":""}" onclick="setSleep('${s.id}')">
+      <span class="sicon">${icon(s.icon,22)}</span><span class="slabel">${s.label}</span>
+    </button>`).join("");
+}
+function setSleep(level){
+  const today = todayISO();
+  data.sleepLogs[today] = data.sleepLogs[today]===level ? undefined : level;
+  markActivity(); checkAchievements(); persist(); renderAll();
+}
+
+/* ============================================================
+   PFLANZE — illustrierter Stil: Erde, Stamm, Blätter, Blüte, Frucht
    ============================================================ */
 const PLANT_SIZE_STAGES = [
-  {min:0,  name:"Keim"},
-  {min:3,  name:"Sprössling"},
-  {min:7,  name:"Junge Pflanze"},
-  {min:13, name:"Kleiner Baum"},
-  {min:21, name:"Baum"}
+  {min:0,  name:"Samen"},
+  {min:3,  name:"Keimling"},
+  {min:7,  name:"Junger Trieb"},
+  {min:13, name:"Wachstum"},
+  {min:19, name:"Blüte"},
+  {min:25, name:"Frucht"}
 ];
-function plantSizeIndex(){
-  const p = data.plant.growthPoints;
-  let idx=0;
-  PLANT_SIZE_STAGES.forEach((s,i)=>{ if(p>=s.min) idx=i; });
-  return idx;
-}
-function plantSVG(sizeIdx, big){
-  const h = big?150:64, w = big?150:64;
-  const leaf = idx => idx>=1;
-  const stemH = 14 + sizeIdx*14;
-  let leaves = "";
-  const leafColor = "var(--green)";
-  if(sizeIdx>=1) leaves += `<ellipse cx="${w/2-10}" cy="${h-stemH-6}" rx="13" ry="9" fill="${leafColor}" transform="rotate(-25 ${w/2-10} ${h-stemH-6})"/>`;
-  if(sizeIdx>=1) leaves += `<ellipse cx="${w/2+10}" cy="${h-stemH-6}" rx="13" ry="9" fill="${leafColor}" transform="rotate(25 ${w/2+10} ${h-stemH-6})"/>`;
-  if(sizeIdx>=2) leaves += `<ellipse cx="${w/2-16}" cy="${h-stemH-16}" rx="14" ry="10" fill="${leafColor}" transform="rotate(-35 ${w/2-16} ${h-stemH-16})"/>`;
-  if(sizeIdx>=2) leaves += `<ellipse cx="${w/2+16}" cy="${h-stemH-16}" rx="14" ry="10" fill="${leafColor}" transform="rotate(35 ${w/2+16} ${h-stemH-16})"/>`;
-  if(sizeIdx>=3) leaves += `<ellipse cx="${w/2}" cy="${h-stemH-24}" rx="16" ry="12" fill="${leafColor}"/>`;
-  if(sizeIdx>=4) leaves += `<ellipse cx="${w/2-22}" cy="${h-stemH-10}" rx="15" ry="10" fill="${leafColor}" transform="rotate(-15 ${w/2-22} ${h-stemH-10})"/><ellipse cx="${w/2+22}" cy="${h-stemH-10}" rx="15" ry="10" fill="${leafColor}" transform="rotate(15 ${w/2+22} ${h-stemH-10})"/>`;
-  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
-    <line x1="${w/2}" y1="${h-4}" x2="${w/2}" y2="${h-stemH}" stroke="#7a5a3a" stroke-width="${4+sizeIdx}" stroke-linecap="round"/>
-    ${leaves}
-  </svg>`;
+function plantSizeIndex(){ const p=data.plant.growthPoints; let idx=0; PLANT_SIZE_STAGES.forEach((s,i)=>{ if(p>=s.min) idx=i; }); return idx; }
+function plantSVG(idx, big){
+  const w = big?190:78, h = big?190:78;
+  const soilY = h-14, soilRX = big?46:19, soilRY = big?13:6;
+  const stemTop = h-14-(10+idx*15);
+  let g = `<ellipse cx="${w/2}" cy="${soilY}" rx="${soilRX}" ry="${soilRY}" fill="#6b4a30"/><ellipse cx="${w/2}" cy="${soilY-1}" rx="${soilRX*0.8}" ry="${soilRY*0.6}" fill="#7c5638"/>`;
+  if(idx===0){
+    g += `<ellipse cx="${w/2}" cy="${soilY-3}" rx="${big?10:5}" ry="${big?7:3.5}" fill="#d8b26a"/>`;
+    return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${g}</svg>`;
+  }
+  g += `<path d="M${w/2} ${soilY-2} L${w/2} ${stemTop}" stroke="var(--green-deep)" stroke-width="${big?6:3}" stroke-linecap="round"/>`;
+  const leaf = (dx,dy,rot,scale) => `<path d="M0 0C0 0 ${-14*scale} ${-4*scale} ${-14*scale} ${-14*scale}C${-3*scale} ${-14*scale} 0 ${-6*scale} 0 0Z" fill="var(--green)" transform="translate(${w/2+dx} ${stemTop+dy}) rotate(${rot}) scale(${big?1.5:0.75})"/>`;
+  if(idx>=1){ g+=leaf(0,-4,-35,1); g+=leaf(0,-4,215,1); }
+  if(idx>=2){ g+=leaf(0,10,-55,1.1); g+=leaf(0,10,235,1.1); }
+  if(idx>=3){ g+=leaf(0,22,-30,1.2); g+=leaf(0,22,210,1.2); g+=leaf(0,2,180,0.9); }
+  if(idx>=4){
+    const fx=w/2, fy=stemTop-6*(big?1.5:0.75);
+    g += `<g transform="translate(${fx} ${fy})"><circle r="${big?9:4.5}" fill="#fbe4ee"/><circle r="${big?3:1.5}" fill="var(--amber)"/></g>`;
+  }
+  if(idx>=5){
+    const fx=w/2+ (big?14:6), fy=stemTop+ (big?10:5);
+    g += `<g transform="translate(${fx} ${fy})">${icon("apple", big?46:22).replace('<svg width="'+(big?46:22)+'" height="'+(big?46:22)+'" viewBox="0 0 40 40" fill="none">','<g>').replace('</svg>','</g>')}</g>`;
+  }
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${g}</svg>`;
 }
 function plantWeeklyExpected(){
-  // erwartete Aktivitäten pro Woche = aktive Routinen (je nach Häufigkeit) — Pause-Tage ausgenommen
-  let expected = 0;
+  let expected=0;
   data.routines.filter(r=>r.active).forEach(r=>{
-    if(r.freq==="daily") expected += 7;
-    else if(r.freq==="weekdays") expected += r.days.length;
+    const perDay = r.timesPerDay||1;
+    if(r.freq==="daily") expected += 7*perDay;
+    else if(r.freq==="weekdays") expected += r.days.length*perDay;
     else if(r.freq==="times") expected += r.timesPerWeek;
   });
   return Math.max(expected,1);
 }
 function plantWeeklyDone(){
-  const now = new Date();
-  const day = now.getDay()||7;
-  const monday = new Date(now); monday.setDate(now.getDate()-day+1);
-  let count = 0;
+  const now=new Date(); const day=now.getDay()||7; const monday=new Date(now); monday.setDate(now.getDate()-day+1);
+  let count=0;
   for(let i=0;i<7;i++){
-    const d = new Date(monday); d.setDate(monday.getDate()+i);
-    const iso = d.toISOString().slice(0,10);
-    count += (data.routineLogs[iso]||[]).length;
+    const d=new Date(monday); d.setDate(monday.getDate()+i);
+    const iso=d.toISOString().slice(0,10);
+    const logs=data.routineLogs[iso]||{};
+    Object.values(logs).forEach(arr=> count += arr.filter(Boolean).length);
   }
   return count;
 }
 function evaluateWeeklyGrowth(){
-  if(data.pause.active) return; // während Pause keine Bewertung, kein Nachteil
-  const now = new Date();
+  if(data.pause.active) return;
+  const now=new Date();
   const weekKey = now.getFullYear()+"-W"+Math.ceil((((now-new Date(now.getFullYear(),0,1))/864e5)+new Date(now.getFullYear(),0,1).getDay()+1)/7);
   if(data.plant.weekHistory.includes(weekKey)) return;
-  const expected = plantWeeklyExpected();
-  const doneCount = plantWeeklyDone();
-  const score = Math.min(1, doneCount/expected);
-  let steps = 0;
-  if(score>=0.5) steps = 1;
-  if(score>=0.75) steps = 2;
-  if(score>=0.9) steps = 3;
+  const expected=plantWeeklyExpected(), doneCount=plantWeeklyDone();
+  const score=Math.min(1, doneCount/expected);
+  let steps=0;
+  if(score>=0.5) steps=1;
+  if(score>=0.75) steps=2;
+  if(score>=0.9) steps=3;
   if(steps>0){
     data.plant.growthPoints += steps;
     data.plant.weekHistory.push(weekKey);
@@ -739,107 +828,113 @@ function evaluateWeeklyGrowth(){
     if(steps>=2) grantFruit("Zusätzliches Wachstum");
   }
 }
-function grantFruit(reason){
-  data.fruits.count++;
-  data.fruits.log.unshift({date:todayISO(), reason});
-  data.fruits.log = data.fruits.log.slice(0,30);
-}
+function grantFruit(reason){ data.fruits.count++; data.fruits.log.unshift({date:todayISO(), reason}); data.fruits.log=data.fruits.log.slice(0,30); }
 function plantState(){
-  if(data.pause.active) return {label:"🌿 Ruhig", note:"Pause aktiv — deine Pflanze wartet geduldig."};
-  const now = new Date();
-  let doneDays = 0, totalDays = 0;
+  if(data.pause.active) return {key:"calm", label:"Ruhig", note:"Pause aktiv"};
+  const now=new Date(); let doneDays=0, totalDays=0;
   for(let i=0;i<3;i++){
-    const d = new Date(now); d.setDate(now.getDate()-i);
-    const iso = d.toISOString().slice(0,10);
+    const d=new Date(now); d.setDate(now.getDate()-i);
+    const iso=d.toISOString().slice(0,10);
     const due = data.routines.filter(r=>r.active).length;
-    if(due>0){ totalDays++; if((data.routineLogs[iso]||[]).length>0) doneDays++; }
+    if(due>0){ totalDays++; const logs=data.routineLogs[iso]||{}; if(Object.values(logs).some(arr=>arr.some(Boolean))) doneDays++; }
   }
   const ratio = totalDays ? doneDays/totalDays : 0;
-  if(ratio===0) return {label:"🌙 Schläft", note:""};
-  if(ratio<0.4) return {label:"🌿 Ruhig", note:""};
-  if(ratio<0.75) return {label:"🌱 Wächst", note:""};
-  return {label:"🌳 Wächst stark", note:""};
+  if(ratio===0) return {key:"sleep", label:"Schläft", note:""};
+  if(ratio<0.4) return {key:"calm", label:"Ruhig", note:""};
+  if(ratio<0.75) return {key:"grow", label:"Wächst", note:""};
+  return {key:"strong", label:"Wächst stark", note:""};
+}
+const STATE_DEFS = [
+  {key:"sleep", label:"Schläft", sub:"Ruhig und regeneriert.", icon:"moon"},
+  {key:"calm", label:"Ruhig", sub:"Alles im Gleichgewicht.", icon:"leaf"},
+  {key:"grow", label:"Wächst", sub:"Neue Blätter entstehen.", icon:"seedling"},
+  {key:"strong", label:"Wächst stark", sub:"Die Pflanze blüht auf.", icon:"tree"}
+];
+function stageBadgeHtml(st){
+  const cls = {sleep:"sleep", calm:"calm", grow:"grow", strong:"strong"}[st.key];
+  return `<span class="stagebadge ${cls}"><span class="dot" style="background:currentColor"></span>${st.label}</span>`;
+}
+function renderStateList(){
+  const current = plantState().key;
+  document.getElementById("stateList").innerHTML = STATE_DEFS.map(s=>`
+    <div class="staterow ${s.key===current?"active":""}">
+      <div class="stateicon" style="background:var(--panel)">${icon(s.icon,20)}</div>
+      <div><div class="sname">${s.label}</div><div class="ssub">${s.sub}</div></div>
+    </div>`).join("");
 }
 function renderPlant(){
   evaluateWeeklyGrowth();
   const idx = plantSizeIndex();
   const st = plantState();
   document.getElementById("plantSvgBig").innerHTML = plantSVG(idx, true);
-  document.getElementById("plantStateBig").textContent = st.label + (st.note?" · "+st.note:"");
+  document.getElementById("plantBadgeBig").innerHTML = stageBadgeHtml(st);
+  document.getElementById("fruitIconWrap").innerHTML = icon("apple",18);
   document.getElementById("fruitCount").textContent = data.fruits.count;
   document.getElementById("fruitCount2").textContent = data.fruits.count+" gesammelt";
+  renderStateList();
   document.getElementById("fruitLog").innerHTML = data.fruits.log.length
-    ? data.fruits.log.map(f=>`<div class="todo"><span style="font-size:18px;margin-right:10px">${FRUIT_ICON}</span><div class="tmain"><div class="tname">${esc(f.reason)}</div><div class="tmeta">${new Date(f.date).toLocaleDateString("de-DE")}</div></div></div>`).join("")
+    ? data.fruits.log.map(f=>`<div class="todo"><span style="margin-right:10px">${icon("apple",18)}</span><div class="tmain"><div class="tname">${esc(f.reason)}</div><div class="tmeta">${new Date(f.date).toLocaleDateString("de-DE")}</div></div></div>`).join("")
     : `<div class="empty">Noch keine Früchte gesammelt.</div>`;
   if(data.settings.plantVisible){
-    document.getElementById("homePlantCard").style.display = "block";
+    document.getElementById("homePlantCard").style.display="block";
     document.getElementById("homePlantSvg").innerHTML = plantSVG(idx,false);
-    document.getElementById("homePlantState").textContent = st.label;
-  } else {
-    document.getElementById("homePlantCard").style.display = "none";
-  }
+    document.getElementById("homePlantBadge").innerHTML = stageBadgeHtml(st);
+  } else { document.getElementById("homePlantCard").style.display="none"; }
 }
 
 /* ============================================================
-   AUSZEICHNUNGEN
+   AUSZEICHNUNGEN — kuratiert, verschiedene Lebensbereiche
    ============================================================ */
-const ACHIEVEMENTS = [
-  {id:"first_todo", name:"Erster Schritt", icon:"sprout", hidden:false, hint:"Schließe dein erstes Todo ab.", check:s=>s.totalTodosCompleted>=1},
-  {id:"first_routine", name:"In Bewegung", icon:"motion", hidden:false, hint:"Schließe deine erste Routine ab.", check:s=>s.totalRoutineCompletions>=1},
-  {id:"streak3", name:"Durchgezogen", icon:"flame", hidden:true, check:s=>s.activeDaysStreak>=3},
-  {id:"streak7", name:"Nicht nachlassen", icon:"flame2", hidden:true, check:s=>s.activeDaysStreak>=7},
-  {id:"tenfruits", name:"Reiche Ernte", icon:"basket", hidden:true, check:(s,d)=>d.fruits.count>=10},
-  {id:"routines25", name:"Gewohnheitstier", icon:"cycle", hidden:true, check:s=>s.totalRoutineCompletions>=25},
-  {id:"todos20", name:"Abgehakt", icon:"checklist", hidden:true, check:s=>s.totalTodosCompleted>=20},
-  {id:"resumed", name:"Wieder angefangen", icon:"seedling", hidden:true, check:(s,d)=>s.pauseResumedCount>=1},
-  {id:"tree", name:"Tiefwurzler", icon:"tree", hidden:true, check:(s,d)=>d.plant.growthPoints>=21},
-  {id:"deepsleeper", name:"Tiefschläfer", icon:"bed", hidden:true, check:s=>(s.lastGapDays||0)>=7},
-];
-
-/* ---- Icons im selben Linien-Stil wie die Pflanze (keine Emojis, keine Farbverläufe) ---- */
-function achievementIconSVG(key){
-  const g = "var(--green)", b = "var(--blue)", p = "var(--purple)", m = "var(--muted)";
-  const box = inner => `<svg width="34" height="34" viewBox="0 0 40 40" fill="none">${inner}</svg>`;
-  switch(key){
-    case "sprout": return box(`<path d="M20 32V18" stroke="${g}" stroke-width="3" stroke-linecap="round"/>
-      <path d="M20 20C20 12 13 9 8 9C8 17 15 20 20 20Z" fill="${g}"/>
-      <path d="M20 16C20 9 27 7 32 7C32 14 25 16 20 16Z" fill="${g}"/>`);
-    case "seedling": return box(`<path d="M20 32V24" stroke="${g}" stroke-width="3" stroke-linecap="round"/>
-      <path d="M20 25C20 19 15 16 11 16C11 22 15 25 20 25Z" fill="${g}"/>
-      <ellipse cx="20" cy="33" rx="9" ry="2.2" fill="${m}" opacity=".5"/>`);
-    case "tree": return box(`<path d="M20 34V20" stroke="#8a6a45" stroke-width="4" stroke-linecap="round"/>
-      <ellipse cx="12" cy="17" rx="8" ry="6" fill="${g}"/><ellipse cx="28" cy="17" rx="8" ry="6" fill="${g}"/>
-      <ellipse cx="20" cy="10" rx="9" ry="7" fill="${g}"/>
-      <path d="M14 34C14 30 17 28 20 28C23 28 26 30 26 34" stroke="#8a6a45" stroke-width="2.4" stroke-linecap="round"/>`);
-    case "motion": return box(`<circle cx="13" cy="10" r="3.4" fill="${b}"/>
-      <path d="M13 15L11 24L16 22L20 30" stroke="${b}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M11 24L6 26" stroke="${b}" stroke-width="3" stroke-linecap="round"/>
-      <path d="M16 22L23 20" stroke="${b}" stroke-width="3" stroke-linecap="round"/>
-      <path d="M27 12H33M29 17H35M27 22H32" stroke="${m}" stroke-width="2" stroke-linecap="round" opacity=".55"/>`);
-    case "flame": return box(`<path d="M20 6C20 6 12 15 12 23C12 29 15.5 33 20 33C24.5 33 28 29 28 23C28 19 25 17 25 17C25 21 22.5 22 22.5 22C22.5 17 20 6 20 6Z" fill="#e08a4e"/>
-      <path d="M20 33C17.5 33 16 30.5 16 27.5C16 24.5 18 22.5 18 22.5C18 25 19.5 26 19.5 26C19.5 24 20 20 20 20C22 23 22.5 25 22.5 27C22.5 31 21 33 20 33Z" fill="#f4b06a"/>`);
-    case "flame2": return box(`<path d="M20 4C20 4 10 14 10 24C10 31 14.5 35 20 35C25.5 35 30 31 30 24C30 19 26 16 26 16C26 21 23 22.5 23 22.5C23 16 20 4 20 4Z" fill="#e0724e"/>
-      <path d="M20 35C16.8 35 15 32 15 28.5C15 25 17.5 22.5 17.5 22.5C17.5 25.5 19.5 27 19.5 27C19.5 24.5 20 19.5 20 19.5C22.5 23.5 23.2 26 23.2 28.5C23.2 32.5 21.5 35 20 35Z" fill="#f4a04e"/>
-      <circle cx="20" cy="10" r="2" fill="#f4c06a"/>`);
-    case "basket": return box(`<path d="M9 18H31L28 33H12L9 18Z" stroke="${m}" stroke-width="2.4" stroke-linejoin="round" fill="none"/>
-      <path d="M13 18C13 12 16 9 20 9C24 9 27 12 27 18" stroke="${m}" stroke-width="2" fill="none"/>
-      <circle cx="16" cy="24" r="3.4" fill="${g}"/><circle cx="21" cy="26" r="3.4" fill="${g}"/><circle cx="25" cy="23" r="3.4" fill="${g}"/>
-      <path d="M16 21V19M21 23V21M25 20V18" stroke="#7a5a3a" stroke-width="1.6" stroke-linecap="round"/>`);
-    case "cycle": return box(`<path d="M30 14A11 11 0 1 0 30 27" stroke="${p}" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M24 8L30 14L24 18" stroke="${p}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`);
-    case "checklist": return box(`<rect x="9" y="7" width="22" height="26" rx="4" stroke="${m}" stroke-width="2.2" fill="none"/>
-      <path d="M13 15L16 18L21 12" stroke="${g}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M13 24L16 27L21 21" stroke="${g}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M25 15H27M25 24H27" stroke="${m}" stroke-width="2" stroke-linecap="round"/>`);
-    case "bed": return box(`<path d="M6 30V15" stroke="${b}" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M34 30V21" stroke="${b}" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M6 24C6 21 8 19.5 10.5 19.5H29.5C32 19.5 34 21.5 34 24V30" stroke="${b}" stroke-width="2.4" stroke-linejoin="round" fill="none"/>
-      <rect x="8.5" y="15.5" width="8" height="5.5" rx="2" fill="${m}" opacity=".55"/>
-      <path d="M4 30H36" stroke="${b}" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M24 8C22.5 8 21.3 9.2 21.3 10.6C21.3 12.6 23 13.6 24.6 13.1C24 14.4 22.6 15.3 21 15.3C18.6 15.3 16.7 13.4 16.7 11C16.7 8.7 18.4 6.8 20.6 6.6C21.7 6.5 22.9 6.9 23.7 7.7C23.8 7.8 23.9 7.9 24 8Z" fill="${p}" opacity=".8"/>`);
-    default: return box(`<circle cx="20" cy="20" r="3" fill="${m}"/>`);
+function teethStreakDays(){
+  let streak=0;
+  for(let i=0;i<60;i++){
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const iso=d.toISOString().slice(0,10);
+    const log=data.routineLogs[iso]?.[TEETH_ID];
+    if(log && log[0] && log[1]) streak++; else break;
   }
+  return streak;
 }
+function sleepStreakGood(){
+  let streak=0;
+  for(let i=0;i<14;i++){
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const iso=d.toISOString().slice(0,10);
+    const lvl=data.sleepLogs[iso];
+    if(lvl==="great"||lvl==="good") streak++; else break;
+  }
+  return streak;
+}
+function sportStreakWeeks(){
+  const sportRoutine = data.routines.find(r=>r.category==="sport" && r.freq==="weekdays" && r.active);
+  if(!sportRoutine) return 0;
+  let weeks=0;
+  for(let w=0; w<12; w++){
+    let allDone=true, hadAny=false;
+    for(const day of sportRoutine.days){
+      const d=new Date(); d.setDate(d.getDate()-(d.getDay()||7)-7*w+day);
+      const iso=d.toISOString().slice(0,10);
+      if(new Date(iso) > new Date(todayISO())) continue;
+      hadAny=true;
+      const log=data.routineLogs[iso]?.[sportRoutine.id];
+      if(!log || !log[0]) allDone=false;
+    }
+    if(hadAny && allDone) weeks++; else break;
+  }
+  return weeks;
+}
+const ACHIEVEMENTS = [
+  {id:"first_todo", name:"Erster Schritt", icon:"seedling", hidden:false, hint:"Schließe dein erstes Todo ab.", desc:"Du hast dein erstes Todo erledigt.", check:s=>s.totalTodosCompleted>=1},
+  {id:"first_routine", name:"Erste Bewegung", icon:"motion", hidden:false, hint:"Schließe deine erste Routine ab.", desc:"Deine erste Routine ist erledigt.", check:s=>s.totalRoutineCompletions>=1},
+  {id:"standhaft", name:"Standhaft", icon:"flame", hidden:true, desc:"14 Tage in Folge aktiv geblieben.", check:s=>s.activeDaysStreak>=14},
+  {id:"klarerkopf", name:"Klarer Kopf", icon:"checklist", hidden:true, desc:"20 Todos erledigt.", check:s=>s.totalTodosCompleted>=20},
+  {id:"strahlend", name:"Strahlender Rhythmus", icon:"toothshine", hidden:true, desc:"Einen Monat lang jeden Tag zweimal geputzt.", check:()=>teethStreakDays()>=30},
+  {id:"ausgeschlafen", name:"Ausgeschlafen", icon:"sun", hidden:true, desc:"7 Nächte in Folge richtig gut geschlafen.", check:()=>sleepStreakGood()>=7},
+  {id:"keintraining", name:"Kein Training verpasst", icon:"sport", hidden:true, desc:"8 Wochen am Stück jedes Training wahrgenommen.", check:()=>sportStreakWeeks()>=8},
+  {id:"comeback", name:"Wieder angefangen", icon:"leaf", hidden:true, desc:"Nach einer Pause wieder eingestiegen.", check:s=>s.pauseResumedCount>=1},
+  {id:"tiefschlaefer", name:"Tiefschläfer", icon:"bed", hidden:true, desc:"Nach einer langen Pause wieder aktiv geworden.", check:s=>(s.lastGapDays||0)>=7},
+  {id:"tiefwurzler", name:"Tiefwurzler", icon:"tree", hidden:true, desc:"Deine Pflanze hat die höchste Wachstumsstufe erreicht.", check:(s,d)=>d.plant.growthPoints>=25},
+];
 function checkAchievements(){
   ACHIEVEMENTS.forEach(a=>{
     if(data.achievements.unlocked.some(u=>u.id===a.id)) return;
@@ -854,10 +949,8 @@ function checkAchievements(){
 function renderAchievements(){
   document.getElementById("achGrid").innerHTML = ACHIEVEMENTS.map(a=>{
     const unlocked = data.achievements.unlocked.find(u=>u.id===a.id);
-    if(unlocked){
-      return `<div class="ach"><span class="aicon">${achievementIconSVG(a.icon)}</span><div class="aname">${esc(a.name)}</div></div>`;
-    }
-    return `<div class="ach locked"><span class="aicon">${achievementIconSVG("locked")}</span><div class="aname">${a.hidden?"???":esc(a.hint||"Verborgen")}</div></div>`;
+    if(unlocked) return `<div class="ach"><span class="aicon">${icon(a.icon,30)}</span><div class="aname">${esc(a.name)}</div><div class="adesc">${esc(a.desc)}</div></div>`;
+    return `<div class="ach locked"><span class="aicon">${icon("lock",30)}</span><div class="aname">${a.hidden?"???":esc(a.hint||"Verborgen")}</div></div>`;
   }).join("");
 }
 
@@ -866,120 +959,73 @@ function renderAchievements(){
    ============================================================ */
 let pausePickType="sick", pausePickSeverity="light";
 function openPauseModal(){ document.getElementById("pauseModal").classList.add("open"); }
-function pickPauseType(v,btn){
-  pausePickType=v;
-  document.querySelectorAll('[data-pt]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel");
-  document.getElementById("severityField").style.display = v==="injury" ? "block" : "none";
-}
-function pickSeverity(v,btn){
-  pausePickSeverity=v;
-  document.querySelectorAll('[data-sv]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel");
-}
-function startPause(){
-  data.pause = {active:true, type:pausePickType, severity:pausePickType==="injury"?pausePickSeverity:"", since:todayISO()};
-  persist(); closeModal("pauseModal"); renderAll();
-}
-function endPause(){
-  data.pause = {active:false, type:"", severity:"", since:""};
-  data.stats.pauseResumedCount++;
-  persist(); checkAchievements();
-  queueToast(pickWelcomeBackMessage());
-  renderAll();
-}
+function pickPauseType(v,btn){ pausePickType=v; document.querySelectorAll('[data-pt]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel"); document.getElementById("severityField").style.display = v==="injury" ? "block" : "none"; }
+function pickSeverity(v,btn){ pausePickSeverity=v; document.querySelectorAll('[data-sv]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel"); }
+function startPause(){ data.pause={active:true, type:pausePickType, severity:pausePickType==="injury"?pausePickSeverity:"", since:todayISO()}; persist(); closeModal("pauseModal"); renderAll(); }
+function endPause(){ data.pause={active:false,type:"",severity:"",since:""}; data.stats.pauseResumedCount++; persist(); checkAchievements(); queueToast(pickWelcomeBackMessage()); renderAll(); }
 function renderPauseCard(){
   const el = document.getElementById("pauseStatus");
   if(data.pause.active){
     el.innerHTML = `<div class="freezebar">Pause aktiv seit ${new Date(data.pause.since).toLocaleDateString("de-DE")} (${data.pause.type==="sick"?"Krankheit":"Verletzung — "+({light:"leicht",medium:"mittel",severe:"schwer"}[data.pause.severity])}). Routinen werden nicht negativ gewertet.</div>
     <button class="secondary" onclick="endPause()">Pause beenden</button>`;
   } else {
-    el.innerHTML = `<p class="hint" style="margin-bottom:12px">Bei Krankheit oder Verletzung pausiert Growth deine Bewertung, ohne dich dafür zu bestrafen.</p>
-    <button class="secondary" onclick="openPauseModal()">Pause starten</button>`;
+    el.innerHTML = `<p class="hint" style="margin-bottom:12px">Bei Krankheit oder Verletzung pausiert Growth deine Bewertung, ohne dich zu bestrafen.</p><button class="secondary" onclick="openPauseModal()">Pause starten</button>`;
   }
 }
 
 /* ============================================================
-   NACHRICHTENSYSTEM (dynamisch, mit Cooldown, mal auch still)
+   NACHRICHTENSYSTEM
    ============================================================ */
 const MESSAGES = {
-  push_gentle: {
-    soft: ["Vielleicht ist heute ein guter Moment für einen kleinen Schritt.", "Kein Druck — aber eine Kleinigkeit würde schon reichen."],
-    normal: ["Du hast eine Weile pausiert. Ein kleiner Schritt heute reicht völlig.", "Zeit für etwas Bewegung, wenn es passt."],
-    push: ["Komm, heute ist ein guter Tag für einen Neustart.", "Ein bisschen Konsequenz jetzt bringt dich weiter."]
-  },
-  praise: {
-    soft: ["Du machst das gut.", "Schön zu sehen, dass es läuft."],
-    normal: ["Du bist in letzter Zeit sehr aktiv. Stark.", "Läuft gerade richtig gut bei dir."],
-    push: ["Weiter so, genau in diesem Tempo.", "Das ist das Niveau, das zählt."]
-  },
-  rest: {
-    soft: ["Du hast viel gemacht. Eine Pause ist völlig in Ordnung.", "Gönn dir ruhig etwas Erholung."],
-    normal: ["Du warst zuletzt sehr aktiv — gönn dir ruhig eine Pause.", "Auch Erholung gehört zum Fortschritt."],
-    push: ["Auch starke Wochen brauchen mal eine Pause. Nimm sie dir.", "Erholung ist Teil des Plans, nicht die Ausnahme."]
-  },
-  football: {
-    soft: ["Heute ist Fußballtag ⚽, falls es passt.", "Fußball steht heute an ⚽."],
-    normal: ["Heute ist Fußball ⚽.", "Vergiss das Training heute nicht ⚽."],
-    push: ["Fußball heute — bring's auf den Platz ⚽.", "Training heute. Kein Ausreden ⚽."]
-  },
-  social: {
-    soft: ["Vielleicht magst du dich heute mit Freunden treffen.", "Ein bisschen Zeit mit anderen Menschen tut oft gut."],
-    normal: ["Vielleicht wäre es schön, heute mal wieder etwas mit Freunden zu unternehmen.", "Wie wär's mit einer Nachricht an einen Freund?"],
-    push: ["Melde dich heute mal wieder bei jemandem.", "Sozialer Kontakt zählt auch als Fortschritt."]
-  }
+  push_gentle: { soft:["Vielleicht ist heute ein guter Moment für einen kleinen Schritt.","Kein Druck — eine Kleinigkeit reicht schon."],
+    normal:["Du hast eine Weile pausiert. Ein kleiner Schritt heute reicht völlig.","Zeit für etwas Bewegung, wenn es passt."],
+    push:["Komm, heute ist ein guter Tag für einen Neustart.","Ein bisschen Konsequenz jetzt bringt dich weiter."] },
+  praise: { soft:["Du machst das gut.","Schön zu sehen, dass es läuft."],
+    normal:["Du bist in letzter Zeit sehr aktiv. Stark.","Läuft gerade richtig gut bei dir."],
+    push:["Weiter so, genau in diesem Tempo.","Das ist das Niveau, das zählt."] },
+  rest: { soft:["Du hast viel gemacht. Eine Pause ist völlig in Ordnung.","Gönn dir ruhig etwas Erholung."],
+    normal:["Du warst zuletzt sehr aktiv — gönn dir ruhig eine Pause.","Auch Erholung gehört zum Fortschritt."],
+    push:["Auch starke Wochen brauchen mal eine Pause. Nimm sie dir.","Erholung ist Teil des Plans, nicht die Ausnahme."] },
+  sport: { soft:["Heute steht Training an, falls es passt.","Training heute, ganz entspannt."],
+    normal:["Heute ist Trainingstag.","Vergiss das Training heute nicht."],
+    push:["Training heute — bring's auf den Platz.","Heute wird trainiert. Keine Ausreden."] },
+  social: { soft:["Vielleicht magst du dich heute mit Freunden treffen.","Ein bisschen Zeit mit anderen Menschen tut oft gut."],
+    normal:["Vielleicht wäre es schön, heute mal wieder etwas mit Freunden zu unternehmen.","Wie wär's mit einer Nachricht an einen Freund?"],
+    push:["Melde dich heute mal wieder bei jemandem.","Sozialer Kontakt zählt auch als Fortschritt."] }
 };
-function pickTone(){ return data.settings.motivationTone || "normal"; }
-function pickFrom(cat){
-  const arr = MESSAGES[cat][pickTone()];
-  return arr[Math.floor(Math.random()*arr.length)];
+function pickTone(){
+  if(data.settings.schoolLoad==="stressful" || data.settings.schoolLoad==="packed") return "soft";
+  return data.settings.motivationTone || "normal";
 }
-function pickWelcomeBackMessage(){
-  const arr = ["Schön, dass du wieder anfängst. 🌱","Du bist wieder drin. Mach genauso weiter.","Willkommen zurück — ein kleiner Schritt reicht für heute."];
-  return arr[Math.floor(Math.random()*arr.length)];
-}
-let toastQueue = [];
+function pickFrom(cat){ const arr=MESSAGES[cat][pickTone()]; return arr[Math.floor(Math.random()*arr.length)]; }
+function pickWelcomeBackMessage(){ const arr=["Schön, dass du wieder anfängst.","Du bist wieder drin. Mach genauso weiter.","Willkommen zurück — ein kleiner Schritt reicht für heute."]; return arr[Math.floor(Math.random()*arr.length)]; }
+let toastQueue=[];
 function queueToast(text){ toastQueue.push(text); }
 function computeHomeMessage(){
-  const freq = data.settings.notifFreq;
+  const freq=data.settings.notifFreq;
   if(freq==="off") return "";
   if(data.messages.lastShownDate===todayISO()) return "";
-  const chance = {low:0.3, normal:0.55, high:0.8}[freq] ?? 0.55;
+  let chance = {low:0.3, normal:0.55, high:0.8}[freq] ?? 0.55;
+  if(data.settings.schoolLoad==="stressful") chance*=0.6;
+  if(data.settings.schoolLoad==="packed") chance*=0.4;
   if(Math.random()>chance) return "";
-
+  const teethMsg = teethPatternMessage();
+  if(teethMsg && Math.random()<0.5){ data.messages.lastShownDate=todayISO(); persist(); return teethMsg; }
   const wd = isoWeekday(new Date());
-  if(data.football.enabled && data.football.days.includes(wd)){
-    data.messages.lastShownDate = todayISO(); persist();
-    return pickFrom("football");
-  }
-  const daysSinceActive = data.stats.lastActiveDate
-    ? Math.round((new Date(todayISO())-new Date(data.stats.lastActiveDate))/864e5) : 99;
-  if(daysSinceActive>=3){
-    data.messages.lastShownDate = todayISO(); persist();
-    return pickFrom("push_gentle");
-  }
-  const doneCount = plantWeeklyDone();
-  const expected = plantWeeklyExpected();
-  if(doneCount/expected>1.3){
-    data.messages.lastShownDate = todayISO(); persist();
-    return pickFrom("rest");
-  }
-  if(doneCount/expected>=0.9){
-    data.messages.lastShownDate = todayISO(); persist();
-    return pickFrom("praise");
-  }
-  if(Math.random()<0.25){
-    data.messages.lastShownDate = todayISO(); persist();
-    return pickFrom("social");
-  }
+  const sportRoutine = data.routines.find(r=>r.category==="sport" && r.freq==="weekdays" && r.active && r.days.includes(wd));
+  if(sportRoutine){ data.messages.lastShownDate=todayISO(); persist(); return pickFrom("sport"); }
+  const daysSinceActive = data.stats.lastActiveDate ? Math.round((new Date(todayISO())-new Date(data.stats.lastActiveDate))/864e5) : 99;
+  if(daysSinceActive>=3){ data.messages.lastShownDate=todayISO(); persist(); return pickFrom("push_gentle"); }
+  const doneCount=plantWeeklyDone(), expected=plantWeeklyExpected();
+  if(doneCount/expected>1.3){ data.messages.lastShownDate=todayISO(); persist(); return pickFrom("rest"); }
+  if(doneCount/expected>=0.9){ data.messages.lastShownDate=todayISO(); persist(); return pickFrom("praise"); }
+  if(Math.random()<0.22){ data.messages.lastShownDate=todayISO(); persist(); return pickFrom("social"); }
   return "";
 }
 function renderHomeMessage(){
-  let html = "";
-  if(toastQueue.length){
-    html += toastQueue.map(t=>`<div class="msg">${esc(t)}</div>`).join("");
-    toastQueue = [];
-  }
-  const reminders = data.todos.filter(reminderDueToday);
-  reminders.forEach(t=>{ html += `<div class="msg">⏰ Erinnerung: ${esc(t.name)}</div>`; });
+  let html="";
+  if(toastQueue.length){ html += toastQueue.map(t=>`<div class="msg">${esc(t)}</div>`).join(""); toastQueue=[]; }
+  data.todos.filter(reminderDueToday).forEach(t=>{ html += `<div class="msg">Erinnerung: ${esc(t.name)}</div>`; });
   const msg = computeHomeMessage();
   if(msg) html += `<div class="msg">${esc(msg)}</div>`;
   document.getElementById("homeMsg").innerHTML = html;
@@ -988,88 +1034,59 @@ function renderHomeMessage(){
 /* ============================================================
    EINSTELLUNGEN
    ============================================================ */
-const THEME_COLORS = {black:"#000000", blue:"#0e1626", turquoise:"#0d1e1c", green:"#0d1c11", white:"#f5f5f2"};
+const THEME_COLORS = {black:"#0b0f1a", blue:"#0a0f1e", turquoise:"#081815", green:"#0a170d", white:"#f3f3ef"};
+const SCHOOL_LEVELS = [
+  {id:"relaxed", label:"Entspannt"},
+  {id:"ok", label:"Ausgeglichen"},
+  {id:"busy", label:"Etwas fordernd"},
+  {id:"stressful", label:"Stressig"},
+  {id:"packed", label:"Voll eingespannt"}
+];
+function renderSchoolChips(){
+  document.getElementById("schoolChips").innerHTML = SCHOOL_LEVELS.map(s=>
+    `<button class="chip ${data.settings.schoolLoad===s.id?"sel":""}" onclick="setSchoolLoad('${s.id}')">${s.label}</button>`).join("");
+}
+function setSchoolLoad(id){ data.settings.schoolLoad=id; persist(); renderSchoolChips(); }
 function renderThemeSwatches(){
   document.getElementById("themeSwatches").innerHTML = Object.entries(THEME_COLORS).map(([k,c])=>
     `<button class="swatch ${data.settings.theme===k?"sel":""}" style="background:${c};border-color:${data.settings.theme===k?'var(--blue)':'var(--line)'}" onclick="setTheme('${k}')"></button>`).join("");
 }
-function setTheme(t){
-  data.settings.theme = t;
-  document.documentElement.setAttribute("data-theme", t);
-  document.querySelector('meta[name="theme-color"]').setAttribute("content", THEME_COLORS[t]);
-  persist(); renderThemeSwatches();
-}
-function toggleSetting(key){
-  data.settings[key] = !data.settings[key];
-  persist(); renderAll();
-}
-function setTone(t, btn){
-  data.settings.motivationTone = t;
-  document.querySelectorAll('[data-tone]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel");
-  persist();
-}
-function setFreq(f, btn){
-  data.settings.notifFreq = f;
-  document.querySelectorAll('[data-freq]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel");
-  persist();
-}
-function toggleFussball(){
-  data.football.enabled = !data.football.enabled;
-  persist(); renderSettingsFootball();
-}
-function toggleFootballDay(day, btn){
-  const idx = data.football.days.indexOf(day);
-  if(idx>-1) data.football.days.splice(idx,1); else data.football.days.push(day);
-  btn.classList.toggle("sel");
-  persist();
-}
-function setFootballHours(v){
-  data.football.hours = Number(v)||1;
-  persist();
-}
-function renderSettingsFootball(){
-  document.getElementById("toggleFussball").classList.toggle("on", data.football.enabled);
-  document.getElementById("footballHours").value = data.football.hours;
-  document.getElementById("footballDays").innerHTML = WEEKDAY_LABELS.map((l,i)=>
-    `<button class="chip ${data.football.days.includes(i+1)?"sel":""}" onclick="toggleFootballDay(${i+1},this)">${l}</button>`).join("");
-}
+function setTheme(t){ data.settings.theme=t; document.documentElement.setAttribute("data-theme",t); document.querySelector('meta[name="theme-color"]').setAttribute("content", THEME_COLORS[t]); persist(); renderAll(); }
+function toggleSetting(key){ data.settings[key]=!data.settings[key]; persist(); renderAll(); }
+function setTone(t, btn){ data.settings.motivationTone=t; document.querySelectorAll('[data-tone]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel"); persist(); }
+function setFreq(f, btn){ data.settings.notifFreq=f; document.querySelectorAll('[data-freq]').forEach(c=>c.classList.remove("sel")); btn.classList.add("sel"); persist(); }
 function renderSettingsStatic(){
   document.getElementById("togglePlantVis").classList.toggle("on", data.settings.plantVisible);
   document.querySelectorAll('[data-tone]').forEach(c=>c.classList.toggle("sel", c.dataset.tone===data.settings.motivationTone));
   document.querySelectorAll('[data-freq]').forEach(c=>c.classList.toggle("sel", c.dataset.freq===data.settings.notifFreq));
-  renderThemeSwatches();
-  renderSettingsFootball();
-  renderPauseCard();
+  renderThemeSwatches(); renderPauseCard(); renderSchoolChips();
 }
 
 /* ---------- Export ---------- */
 function exportObsidian(){
-  const date = todayISO();
-  const lines = [`# Growth – ${date}`, "", "## Todos", ""];
+  const date=todayISO();
+  const lines=[`# Growth – ${date}`,"","## Todos",""];
   data.todos.forEach(t=> lines.push(`- [${t.done?"x":" "}] ${t.important?"★ ":""}${t.name}${t.date?" — "+t.date:""}${t.note?" — "+t.note:""}`));
-  lines.push("", "## Routinen", "");
-  data.routines.forEach(r=> lines.push(`- ${r.icon} ${r.name} (${r.freq})${r.active?"":" — pausiert"}`));
-  lines.push("", "## Pflanze", `- Wachstumsstufe: ${PLANT_SIZE_STAGES[plantSizeIndex()].name}`, `- Früchte: ${data.fruits.count}`, `- Auszeichnungen: ${data.achievements.unlocked.length}`);
-  const blob = new Blob([lines.join("\n")], {type:"text/markdown"});
-  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `Growth-${date}.md`; a.click(); URL.revokeObjectURL(a.href);
+  lines.push("","## Routinen","");
+  data.routines.forEach(r=> lines.push(`- ${r.name} (${freqLabel(r)})${r.active?"":" — pausiert"}`));
+  lines.push("","## Pflanze", `- Wachstumsstufe: ${PLANT_SIZE_STAGES[plantSizeIndex()].name}`, `- Früchte: ${data.fruits.count}`, `- Auszeichnungen: ${data.achievements.unlocked.length}`);
+  const blob=new Blob([lines.join("\n")],{type:"text/markdown"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=`Growth-${date}.md`; a.click(); URL.revokeObjectURL(a.href);
 }
 function exportICS(){
-  const withDate = data.todos.filter(t=>t.date);
+  const withDate=data.todos.filter(t=>t.date);
   if(!withDate.length){ alert("Keine Todos mit Datum vorhanden."); return; }
-  const lines = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Growth//DE"];
+  const lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Growth//DE"];
   withDate.forEach(t=>{
-    const d = t.date.replace(/-/g,"");
-    const next = new Date(t.date+"T00:00"); next.setDate(next.getDate()+1);
-    const d2 = next.toISOString().slice(0,10).replace(/-/g,"");
+    const d=t.date.replace(/-/g,""); const next=new Date(t.date+"T00:00"); next.setDate(next.getDate()+1);
+    const d2=next.toISOString().slice(0,10).replace(/-/g,"");
     lines.push("BEGIN:VEVENT",`UID:${t.id}@growth-app`,`DTSTART;VALUE=DATE:${d}`,`DTEND;VALUE=DATE:${d2}`,`SUMMARY:${t.name.replace(/\n/g," ")}`,"END:VEVENT");
   });
   lines.push("END:VCALENDAR");
-  const blob = new Blob([lines.join("\r\n")], {type:"text/calendar"});
-  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "Growth-Termine.ics"; a.click(); URL.revokeObjectURL(a.href);
+  const blob=new Blob([lines.join("\r\n")],{type:"text/calendar"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="Growth-Termine.ics"; a.click(); URL.revokeObjectURL(a.href);
 }
-function resetData(){
-  if(confirm("Wirklich alle Growth-Daten unwiderruflich löschen?")){ localStorage.removeItem(STORAGE_KEY); location.reload(); }
-}
+function resetData(){ if(confirm("Wirklich alle Growth-Daten unwiderruflich löschen?")){ localStorage.removeItem(STORAGE_KEY); location.reload(); } }
 
 /* ============================================================
    RENDER
@@ -1077,15 +1094,11 @@ function resetData(){
 function renderAll(){
   document.getElementById("greeting").textContent = greeting();
   document.getElementById("date").textContent = fmtDate(new Date());
-  renderHomeTodos();
-  renderHomeRoutines();
-  renderTodos();
-  renderRoutines();
-  renderPlant();
-  renderAchievements();
-  renderSettingsStatic();
-  renderHomeMessage();
+  renderHomeTodos(); renderSleepRow(); renderHomeRoutines();
+  renderTodos(); renderRoutines(); renderPlant(); renderAchievements();
+  renderSettingsStatic(); renderHomeMessage();
 }
+ensureFixedRoutines();
 document.documentElement.setAttribute("data-theme", data.settings.theme);
 renderAll();
 </script>
